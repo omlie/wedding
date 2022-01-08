@@ -4,9 +4,15 @@ import {
   Meta,
   Outlet,
   Scripts,
-  ScrollRestoration
+  ScrollRestoration,
 } from "remix";
 import type { MetaFunction } from "remix";
+import type { LinksFunction } from "remix";
+import tailwindUrl from "./tailwind.css";
+
+export const links: LinksFunction = () => {
+  return [{ rel: "stylesheet", href: tailwindUrl }];
+};
 
 export const meta: MetaFunction = () => {
   return { title: "New Remix App" };
@@ -18,10 +24,11 @@ export default function App() {
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width,initial-scale=1" />
+        <title>Othea & Vana</title>
         <Meta />
         <Links />
       </head>
-      <body>
+      <body className="flex flex-col items-start flex-1 max-w-5xl px-6 mx-auto bg-lavender-grey text-indigo-dye">
         <Outlet />
         <ScrollRestoration />
         <Scripts />
