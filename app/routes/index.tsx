@@ -1,30 +1,18 @@
 import { useLoaderData } from "remix";
-import { getLinks } from "~/api/getLinks";
 import { getMainPage } from "~/api/getMainPage";
+import { Layout } from "~/components";
 import { TPage } from "~/types/shared";
 
 export async function loader() {
-  const page = await getMainPage();
-  const links = await getLinks();
-
-  return { page, links };
+  return getMainPage();
 }
 
-type MainPageData = {
-  page: TPage;
-  links: string[];
-};
-
 export default function Index() {
-  const { page, links }: MainPageData = useLoaderData();
+  const page: TPage = useLoaderData();
   return (
-    <div>
+    <Layout>
       <h1>{page.heading}</h1>
-      <div>
-        {links?.map((link) => (
-          <a href={link}>{link}</a>
-        ))}
-      </div>
-    </div>
+      <div></div>
+    </Layout>
   );
 }

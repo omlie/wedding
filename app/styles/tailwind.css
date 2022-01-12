@@ -2,6 +2,80 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  @font-face {
+    font-family: "Arsenal Regular";
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+    src: url("/fonts/Arsenal-Regular.ttf") format("ttf");
+  }
+
+  @font-face {
+    font-family: "Arsenal Bold";
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+    src: url("/fonts/Arsenal-Bold.ttf") format("ttf");
+  }
+
+  html,
+  body {
+    @apply min-h-[100vh];
+  }
+
+  h1 {
+    @apply text-5xl font-arsenal-bold font-medium;
+  }
+
+  h2 {
+    @apply text-4xl font-arsenal-bold font-medium;
+  }
+
+  h3 {
+    @apply text-3xl font-arsenal-bold font-bold;
+  }
+
+  h4 {
+    @apply text-lg font-arsenal font-medium;
+  }
+
+  h5 {
+    @apply text-xl font-arsenal font-medium;
+  }
+
+  h6 {
+    @apply text-lg font-arsenal font-medium;
+  }
+
+  body {
+    @apply text-base font-normal font-arsenal relative;
+  }
+
+  a,
+  .anchor-styling {
+    @apply text-xs font-medium font-arsenal hover:underline hover:text-pewter-blue focus:text-pewter-blue focus:underline;
+  }
+
+  @screen lg {
+    h1 {
+      @apply text-6xl;
+    }
+
+    h2 {
+      @apply text-5xl;
+    }
+
+    h3 {
+      @apply text-4xl;
+    }
+
+    h4 {
+      @apply text-2xl;
+    }
+  }
+}
+
 @layer components {
   .custom-class {
     @apply bg-black;
