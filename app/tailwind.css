@@ -617,12 +617,28 @@ a:focus, .anchor-styling:focus {
   display: flex;
 }
 
+.h-screen {
+  height: 100vh;
+}
+
+.h-20 {
+  height: 5rem;
+}
+
+.h-auto {
+  height: auto;
+}
+
 .max-h-image {
   max-height: 512px;
 }
 
 .w-full {
   width: 100%;
+}
+
+.w-screen {
+  width: 100vw;
 }
 
 .max-w-5xl {
@@ -651,6 +667,10 @@ a:focus, .anchor-styling:focus {
 
 .items-baseline {
   align-items: baseline;
+}
+
+.justify-between {
+  justify-content: space-between;
 }
 
 .gap-6 {
@@ -708,4 +728,10 @@ a:focus, .anchor-styling:focus {
 .text-blue-jeans {
   --tw-text-opacity: 1;
   color: rgb(96 178 229 / var(--tw-text-opacity));
+}
+
+.transition-all {
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
 }
