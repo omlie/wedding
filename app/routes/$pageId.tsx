@@ -1,6 +1,6 @@
 import { MetaFunction, useLoaderData } from "remix";
 import { getPageBySlug } from "~/api/getPageBySlug";
-import { Layout } from "~/components";
+import { ContentBlock, Layout, RichText } from "~/components";
 import { TInfoPage } from "~/types/shared";
 
 export const meta: MetaFunction = ({
@@ -21,15 +21,30 @@ export const meta: MetaFunction = ({
 };
 
 export function loader({ params }: { params: { pageId: string } }) {
-  return getPageBySlug(params.pageId);
+  const res = getPageBySlug(params.pageId);
+  console.log(res);
+  return res;
 }
 
 export default function Index() {
-  const page: TInfoPage = useLoaderData();
-
+  const { heading, image, body, contentBlocks }: TInfoPage = useLoaderData();
+  console.log(contentBlocks);
   return (
-    <Layout>
-      <h1>{page.heading}</h1>
-    </Layout>
+    <main>
+      {image && (
+        <img
+          className="object-cover w-full max-h-image"
+          src={image.file?.url}
+          alt={image.title}
+        />
+      )}
+      <Layout>
+        <h1>{heading}</h1>
+        <RichText content={body} />
+        {contentBlocks?.map((block) => (
+          <ContentBlock key={block.heading} {...block} />
+        ))}
+      </Layout>
+    </main>
   );
 }

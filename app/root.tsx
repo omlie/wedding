@@ -13,6 +13,7 @@ import type { LinksFunction } from "remix";
 import tailwindUrl from "./tailwind.css";
 import { getLinks } from "./api/getLinks";
 import NavBar from "./components/NavBar";
+import { TLink } from "./types/shared";
 
 export const links: LinksFunction = () => {
   return [{ rel: "stylesheet", href: tailwindUrl }];
@@ -27,7 +28,7 @@ export const loader: LoaderFunction = () => {
 };
 
 export default function App() {
-  const links: string[] = useLoaderData();
+  const links: TLink[] = useLoaderData();
   return (
     <html lang="en">
       <head>

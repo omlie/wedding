@@ -1,3 +1,4 @@
+import { fieldsParser } from "contentful-parsers";
 import { TInfoPage, TPage } from "~/types/shared";
 import { getContentfulClient } from "./contentful";
 
@@ -12,7 +13,7 @@ export const getPageBySlug = async (
   });
 
   if (result?.items.length !== 0) {
-    return result?.items[0].fields as TInfoPage;
+    return fieldsParser(result?.items[0]) as TInfoPage;
   }
 
   return null;

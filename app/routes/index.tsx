@@ -1,6 +1,6 @@
 import { useLoaderData } from "remix";
 import { getMainPage } from "~/api/getMainPage";
-import { Layout } from "~/components";
+import { ContentBlock, Layout, RichText } from "~/components";
 import { TPage } from "~/types/shared";
 
 export async function loader() {
@@ -8,11 +8,23 @@ export async function loader() {
 }
 
 export default function Index() {
-  const page: TPage = useLoaderData();
+  const { heading, image, body, contentBlocks }: TPage = useLoaderData();
   return (
-    <Layout>
-      <h1>{page.heading}</h1>
-      <div></div>
-    </Layout>
+    <main>
+      {image && (
+        <img
+          className="object-cover w-full max-h-image"
+          src={image.file?.url}
+          alt={image.title}
+        />
+      )}
+      <Layout>
+        <h1>{heading}</h1>
+        <RichText content={body} />
+        {contentBlocks?.map((block) => (
+          <ContentBlock key={block.heading} {...block} />
+        ))}
+      </Layout>
+    </main>
   );
 }

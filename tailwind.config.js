@@ -28,6 +28,9 @@ module.exports = {
       "8xl": ["4.5rem", "3.375rem"],
       none: [0, 0],
     },
+    maxHeight: {
+      image: "512px",
+    },
     extend: {},
   },
   variants: {},
