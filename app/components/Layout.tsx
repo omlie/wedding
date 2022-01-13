@@ -4,10 +4,16 @@ import { overrideTailwindClasses } from "tailwind-override";
 type TLayoutProps = {
   className?: string;
   noMargin?: boolean;
+  wide?: boolean;
   children: React.ReactNode;
 };
 
-const Layout = ({ className, children, noMargin = false }: TLayoutProps) => {
+const Layout = ({
+  className,
+  children,
+  noMargin = false,
+  wide = false,
+}: TLayoutProps) => {
   return (
     <div
       className={overrideTailwindClasses(
@@ -16,6 +22,7 @@ const Layout = ({ className, children, noMargin = false }: TLayoutProps) => {
           {
             [className ?? ""]: className,
             ["my-0"]: noMargin,
+            ["max-w-7xl"]: wide,
           }
         )
       )}

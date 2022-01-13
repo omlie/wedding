@@ -2,11 +2,12 @@ module.exports = {
   content: ["./app/**/*.{ts,tsx}"],
   theme: {
     colors: {
-      "lavender-grey": "#D6D7E3",
-      "indigo-dye": "#1C3E54",
-      "pewter-blue": "#71A2B6",
-      "blue-jeans": "#60B2E5",
-      "electric-blue": "#53F4FF",
+      "blue-lightest": "#DFF2F6",
+      "blue-light": "#BEE3F3",
+      "blue-dark": "#557077",
+      "orange-accent": "#D79750",
+      "pink-accent": "#E79F91",
+      text: "#1E292D",
     },
     fontFamily: {
       adelio: ["Adelio Darmanto Regular", "Bebas Neue", "Arial", "sans"],

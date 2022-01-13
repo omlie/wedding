@@ -49,12 +49,12 @@
   }
 
   body {
-    @apply text-base font-normal font-arsenal relative;
+    @apply text-base font-normal font-arsenal relative bg-blue-lightest text-text;
   }
 
   a,
   .anchor-styling {
-    @apply text-base font-normal underline hover:underline hover:text-pewter-blue focus:text-pewter-blue focus:underline;
+    @apply text-base font-normal underline hover:underline hover:text-pink-accent focus:text-pink-accent focus:underline;
   }
 
   li {

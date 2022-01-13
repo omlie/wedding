@@ -43,7 +43,7 @@ export default function App() {
         <Meta />
         <Links />
       </head>
-      <body className="bg-lavender-grey text-indigo-dye">
+      <body>
         <NavBar links={links} />
         <Outlet />
         <ScrollRestoration />
