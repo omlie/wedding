@@ -1,11 +1,9 @@
-import clsx from "clsx";
-import { overrideTailwindClasses } from "tailwind-override";
 import { TContentBlock } from "~/types/shared";
 import { RichText } from ".";
 
 const ContentBlock = ({ heading, body, image }: TContentBlock) => {
   return (
-    <div className="gap-6">
+    <div className="flex flex-col gap-2">
       {image && (
         <img
           className="object-cover w-full my-8 max-h-image"

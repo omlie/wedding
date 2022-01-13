@@ -1,5 +1,6 @@
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import { Document } from "@contentful/rich-text-types";
+import clsx from "clsx";
 
 const RichText = ({
   className,
@@ -9,7 +10,11 @@ const RichText = ({
   content: Document | null;
 }) => {
   return content ? (
-    <div className={className}>{documentToReactComponents(content)}</div>
+    <div
+      className={clsx("flex-col flex gap-6", { [className ?? ""]: className })}
+    >
+      {documentToReactComponents(content)}
+    </div>
   ) : null;
 };
 
