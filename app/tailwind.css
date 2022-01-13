@@ -599,8 +599,12 @@ li {
   --tw-backdrop-sepia:  ;
 }
 
-.fixed {
-  position: fixed;
+.absolute {
+  position: absolute;
+}
+
+.relative {
+  position: relative;
 }
 
 .right-0 {
@@ -627,6 +631,10 @@ li {
   margin-bottom: 0px;
 }
 
+.mt-16 {
+  margin-top: 4rem;
+}
+
 .block {
   display: block;
 }
@@ -637,10 +645,6 @@ li {
 
 .h-auto {
   height: auto;
-}
-
-.h-screen {
-  height: 100vh;
 }
 
 .max-h-image {
@@ -655,8 +659,8 @@ li {
   width: 100vw;
 }
 
-.min-w-\[800px\] {
-  min-width: 800px;
+.w-96 {
+  width: 24rem;
 }
 
 .max-w-5xl {
@@ -671,6 +675,21 @@ li {
   flex: 1 1 0%;
 }
 
+.translate-x-16 {
+  --tw-translate-x: 4rem;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.-translate-y-full {
+  --tw-translate-y: -100%;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.translate-x-10 {
+  --tw-translate-x: 2.5rem;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
 .flex-row {
   flex-direction: row;
 }
@@ -681,6 +700,10 @@ li {
 
 .items-start {
   align-items: flex-start;
+}
+
+.items-end {
+  align-items: flex-end;
 }
 
 .items-center {
@@ -703,6 +726,14 @@ li {
   gap: 1rem;
 }
 
+.rounded-5xl {
+  border-radius: 0.5rem;
+}
+
+.rounded-3xl {
+  border-radius: 0.3125rem;
+}
+
 .bg-blue-dark {
   --tw-bg-opacity: 1;
   background-color: rgb(85 112 119 / var(--tw-bg-opacity));
@@ -713,6 +744,10 @@ li {
      object-fit: cover;
 }
 
+.p-10 {
+  padding: 2.5rem;
+}
+
 .px-6 {
   padding-left: 1.5rem;
   padding-right: 1.5rem;
@@ -721,6 +756,10 @@ li {
 .py-4 {
   padding-top: 1rem;
   padding-bottom: 1rem;
+}
+
+.text-right {
+  text-align: right;
 }
 
 .font-adelio {
@@ -749,6 +788,17 @@ li {
 .text-pink-accent {
   --tw-text-opacity: 1;
   color: rgb(231 159 145 / var(--tw-text-opacity));
+}
+
+.no-underline {
+  -webkit-text-decoration-line: none;
+          text-decoration-line: none;
+}
+
+.shadow-menu {
+  --tw-shadow: 0 8px 8px -2px rgba(0,0,0,0.25);
+  --tw-shadow-colored: 0 8px 8px -2px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
 .transition-all {
