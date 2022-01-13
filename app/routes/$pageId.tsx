@@ -22,13 +22,11 @@ export const meta: MetaFunction = ({
 
 export function loader({ params }: { params: { pageId: string } }) {
   const res = getPageBySlug(params.pageId);
-  console.log(res);
   return res;
 }
 
 export default function Index() {
   const { heading, image, body, contentBlocks }: TInfoPage = useLoaderData();
-  console.log(contentBlocks);
   return (
     <main>
       {image && (

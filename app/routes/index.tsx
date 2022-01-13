@@ -19,7 +19,7 @@ export default function Index() {
         />
       )}
       <Layout>
-        <h1>{heading}</h1>
+        <h1 className="font-adelio">{heading}</h1>
         <RichText content={body} />
         {contentBlocks?.map((block) => (
           <ContentBlock key={block.heading} {...block} />

@@ -4,7 +4,6 @@ import { TContentBlock } from "~/types/shared";
 import { RichText } from ".";
 
 const ContentBlock = ({ heading, body, image }: TContentBlock) => {
-  console.log(heading);
   return (
     <div className="gap-6">
       {image && (

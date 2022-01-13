@@ -16,7 +16,7 @@
     font-weight: 400;
     font-style: normal;
     font-display: swap;
-    src: url("/fonts/Arsenal-Bold.ttf") format("ttf");
+    src: url("/fonts/adelio.otf") format("otf");
   }
 
   html,
@@ -25,15 +25,15 @@
   }
 
   h1 {
-    @apply text-5xl font-arsenal-bold font-medium;
+    @apply text-5xl font-adelio font-medium;
   }
 
   h2 {
-    @apply text-4xl font-arsenal-bold font-medium;
+    @apply text-4xl font-adelio font-medium;
   }
 
   h3 {
-    @apply text-3xl font-arsenal-bold font-bold;
+    @apply text-3xl font-adelio font-bold;
   }
 
   h4 {

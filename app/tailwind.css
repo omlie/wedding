@@ -444,7 +444,7 @@ Ensure the default browser behavior of the `hidden` attribute.
 
   font-display: swap;
 
-  src: url("/fonts/Arsenal-Bold.ttf") format("ttf");
+  src: url("/fonts/adelio.otf") format("otf");
 }
 
 html, body {
@@ -452,21 +452,21 @@ html, body {
 }
 
 h1 {
-  font-family: Arsenal Bold, Bebas Neue, Arial, sans;
+  font-family: Adelio Darmanto Regular, Bebas Neue, Arial, sans;
   font-size: 2.375rem;
   line-height: 2.25rem;
   font-weight: 500;
 }
 
 h2 {
-  font-family: Arsenal Bold, Bebas Neue, Arial, sans;
+  font-family: Adelio Darmanto Regular, Bebas Neue, Arial, sans;
   font-size: 2rem;
   line-height: 1;
   font-weight: 500;
 }
 
 h3 {
-  font-family: Arsenal Bold, Bebas Neue, Arial, sans;
+  font-family: Adelio Darmanto Regular, Bebas Neue, Arial, sans;
   font-size: 1.625rem;
   line-height: 2rem;
   font-weight: 700;
@@ -617,16 +617,12 @@ a:focus, .anchor-styling:focus {
   display: flex;
 }
 
-.h-screen {
-  height: 100vh;
-}
-
-.h-20 {
-  height: 5rem;
-}
-
 .h-auto {
   height: auto;
+}
+
+.h-screen {
+  height: 100vh;
 }
 
 .max-h-image {
@@ -665,10 +661,6 @@ a:focus, .anchor-styling:focus {
   align-items: center;
 }
 
-.items-baseline {
-  align-items: baseline;
-}
-
 .justify-between {
   justify-content: space-between;
 }
@@ -704,6 +696,10 @@ a:focus, .anchor-styling:focus {
 .py-4 {
   padding-top: 1rem;
   padding-bottom: 1rem;
+}
+
+.font-adelio {
+  font-family: Adelio Darmanto Regular, Bebas Neue, Arial, sans;
 }
 
 .text-3xl {

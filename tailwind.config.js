@@ -9,7 +9,7 @@ module.exports = {
       "electric-blue": "#53F4FF",
     },
     fontFamily: {
-      "arsenal-bold": ["Arsenal Bold", "Bebas Neue", "Arial", "sans"],
+      adelio: ["Adelio Darmanto Regular", "Bebas Neue", "Arial", "sans"],
       arsenal: ["Arsenal Regular", "Roboto", "Arial", "sans-serif"],
     },
     fontSize: {
