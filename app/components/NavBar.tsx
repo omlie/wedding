@@ -1,15 +1,19 @@
-import { NavLink } from "remix";
+import { NavLink, useTransition } from "remix";
 import { TLink } from "~/types/shared";
 import { Layout } from ".";
 import Home from "remixicon-react/HomeHeartFillIcon";
 import Menu from "remixicon-react/MenuLineIcon";
 import Close from "remixicon-react/CloseLineIcon";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import clsx from "clsx";
-import { overrideTailwindClasses } from "tailwind-override";
 
 const NavBar = ({ links }: { links: TLink[] }) => {
+  const transition = useTransition();
   const [open, setOpen] = useState<boolean>(false);
+
+  useEffect(() => {
+    setOpen(false);
+  }, [transition]);
 
   return (
     <nav className="w-screen h-auto transition-all bg-blue-dark text-orange-accent text-blue-jeans">
