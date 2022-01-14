@@ -47,7 +47,7 @@ const NavBar = ({ links }: { links: TLink[] }) => {
             </a>
             <div
               className={clsx(
-                "absolute right-0 flex flex-col bg-blue-dark p-10 transition-all rounded-5xl translate-x-10 text-right",
+                "absolute right-0 flex flex-col bg-blue-dark p-10 transition-all rounded-5xl text-right xl:translate-x-10",
                 {
                   "h-auto -translate-y-full": !open,
                   "mt-56 shadow-menu": open,

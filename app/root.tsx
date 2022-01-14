@@ -11,18 +11,12 @@ import {
 import type { MetaFunction } from "remix";
 import type { LinksFunction } from "remix";
 import tailwindUrl from "./tailwind.css";
-import adelioUrl from "./styles/fonts/adelio.otf";
-import arsenalUrl from "./styles/fonts/Arsenal-Regular.ttf";
 import { getLinks } from "./api/getLinks";
 import NavBar from "./components/NavBar";
 import { TLink } from "./types/shared";
 
 export const links: LinksFunction = () => {
-  return [
-    { rel: "stylesheet", href: tailwindUrl },
-    { rel: "stylesheet", href: adelioUrl },
-    { rel: "stylesheet", href: arsenalUrl },
-  ];
+  return [{ rel: "stylesheet", href: tailwindUrl }];
 };
 
 export const meta: MetaFunction = () => {

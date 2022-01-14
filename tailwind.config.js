@@ -10,8 +10,8 @@ module.exports = {
       text: "#1E292D",
     },
     fontFamily: {
-      adelio: ["Adelio Darmanto Regular", "Bebas Neue", "Arial", "sans"],
-      arsenal: ["Arsenal Regular", "Roboto", "Arial", "sans-serif"],
+      adelio: ["Adelio Darmanto"],
+      carrois: ["Carrois Gothic"],
     },
     fontSize: {
       "2xs": ["0.75rem", "1rem"],

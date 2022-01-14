@@ -4,19 +4,21 @@
 
 @layer base {
   @font-face {
-    font-family: "Arsenal Regular";
+    font-family: "Carrois Gothic";
     font-weight: 400;
     font-style: normal;
     font-display: swap;
-    src: url("/fonts/Arsenal-Regular.ttf") format("ttf");
+    src: url("/fonts/CarroisGothic-Regular.woff") format("woff"),
+      url("/fonts/CarroisGothic-Regular.woff2") format("woff2");
   }
 
   @font-face {
-    font-family: "Arsenal Bold";
+    font-family: "Adelio Darmanto";
     font-weight: 400;
     font-style: normal;
     font-display: swap;
-    src: url("/fonts/adelio.otf") format("otf");
+    src: url("/fonts/AdelioDarmanto.woff") format("woff"),
+      url("/fonts/AdelioDarmanto.woff2") format("woff2");
   }
 
   html,
@@ -25,31 +27,31 @@
   }
 
   h1 {
-    @apply text-5xl font-adelio font-medium;
+    @apply text-6xl font-adelio font-medium;
   }
 
   h2 {
-    @apply text-4xl font-adelio font-medium;
+    @apply text-4xl font-carrois font-medium;
   }
 
   h3 {
-    @apply text-3xl font-adelio font-bold;
+    @apply text-3xl font-carrois font-bold;
   }
 
   h4 {
-    @apply text-lg font-arsenal font-medium;
+    @apply text-lg font-carrois font-medium;
   }
 
   h5 {
-    @apply text-xl font-arsenal font-medium;
+    @apply text-xl font-carrois font-medium;
   }
 
   h6 {
-    @apply text-lg font-arsenal font-medium;
+    @apply text-lg font-carrois font-medium;
   }
 
   body {
-    @apply text-base font-normal font-arsenal relative bg-blue-lightest text-text;
+    @apply text-base font-normal font-carrois relative bg-blue-lightest text-text;
   }
 
   a,
@@ -63,7 +65,7 @@
 
   @screen lg {
     h1 {
-      @apply text-6xl;
+      @apply text-8xl;
     }
 
     h2 {

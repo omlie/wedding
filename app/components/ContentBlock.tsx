@@ -10,7 +10,7 @@ const ContentBlock = ({ heading, body, image }: TContentBlock) => {
           src={image.file?.url}
         />
       )}
-      <h2 className="text-3xl font-light ">{heading}</h2>
+      <h2 className="text-3xl">{heading}</h2>
       <RichText content={body} />
     </div>
   );

@@ -424,7 +424,7 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 
 @font-face {
-  font-family: "Arsenal Regular";
+  font-family: "Carrois Gothic";
 
   font-weight: 400;
 
@@ -432,11 +432,12 @@ Ensure the default browser behavior of the `hidden` attribute.
 
   font-display: swap;
 
-  src: url("/fonts/Arsenal-Regular.ttf") format("ttf");
+  src: url("/fonts/CarroisGothic-Regular.woff") format("woff"),
+      url("/fonts/CarroisGothic-Regular.woff2") format("woff2");
 }
 
 @font-face {
-  font-family: "Arsenal Bold";
+  font-family: "Adelio Darmanto";
 
   font-weight: 400;
 
@@ -444,7 +445,8 @@ Ensure the default browser behavior of the `hidden` attribute.
 
   font-display: swap;
 
-  src: url("/fonts/adelio.otf") format("otf");
+  src: url("/fonts/AdelioDarmanto.woff") format("woff"),
+      url("/fonts/AdelioDarmanto.woff2") format("woff2");
 }
 
 html, body {
@@ -452,42 +454,42 @@ html, body {
 }
 
 h1 {
-  font-family: Adelio Darmanto Regular, Bebas Neue, Arial, sans;
-  font-size: 2.375rem;
-  line-height: 2.25rem;
+  font-family: Adelio Darmanto;
+  font-size: 2.75rem;
+  line-height: 2.5rem;
   font-weight: 500;
 }
 
 h2 {
-  font-family: Adelio Darmanto Regular, Bebas Neue, Arial, sans;
+  font-family: Carrois Gothic;
   font-size: 2rem;
   line-height: 1;
   font-weight: 500;
 }
 
 h3 {
-  font-family: Adelio Darmanto Regular, Bebas Neue, Arial, sans;
+  font-family: Carrois Gothic;
   font-size: 1.625rem;
   line-height: 2rem;
   font-weight: 700;
 }
 
 h4 {
-  font-family: Arsenal Regular, Roboto, Arial, sans-serif;
+  font-family: Carrois Gothic;
   font-size: 1.125rem;
   line-height: 1.5rem;
   font-weight: 500;
 }
 
 h5 {
-  font-family: Arsenal Regular, Roboto, Arial, sans-serif;
+  font-family: Carrois Gothic;
   font-size: 1.25rem;
   line-height: 1.5rem;
   font-weight: 500;
 }
 
 h6 {
-  font-family: Arsenal Regular, Roboto, Arial, sans-serif;
+  font-family: Carrois Gothic;
   font-size: 1.125rem;
   line-height: 1.5rem;
   font-weight: 500;
@@ -497,7 +499,7 @@ body {
   position: relative;
   --tw-bg-opacity: 1;
   background-color: rgb(223 242 246 / var(--tw-bg-opacity));
-  font-family: Arsenal Regular, Roboto, Arial, sans-serif;
+  font-family: Carrois Gothic;
   font-size: 1rem;
   line-height: 1.5rem;
   font-weight: 400;
@@ -534,8 +536,8 @@ li {
 
 @media (min-width: 1024px) {
   h1 {
-    font-size: 2.75rem;
-    line-height: 2.5rem;
+    font-size: 4.5rem;
+    line-height: 3.375rem;
   }
 
   h2 {
@@ -675,11 +677,6 @@ li {
   flex: 1 1 0%;
 }
 
-.translate-x-10 {
-  --tw-translate-x: 2.5rem;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
 .-translate-y-full {
   --tw-translate-y: -100%;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
@@ -758,7 +755,7 @@ li {
 }
 
 .font-adelio {
-  font-family: Adelio Darmanto Regular, Bebas Neue, Arial, sans;
+  font-family: Adelio Darmanto;
 }
 
 .text-3xl {
@@ -774,10 +771,6 @@ li {
 .text-sm {
   font-size: 0.875rem;
   line-height: 1.375rem;
-}
-
-.font-light {
-  font-weight: 300;
 }
 
 .text-orange-accent {
@@ -823,4 +816,11 @@ li {
 .focus\:text-orange-accent:focus {
   --tw-text-opacity: 1;
   color: rgb(215 151 80 / var(--tw-text-opacity));
+}
+
+@media (min-width: 1280px) {
+  .xl\:translate-x-10 {
+    --tw-translate-x: 2.5rem;
+    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  }
 }
