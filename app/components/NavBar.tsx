@@ -25,7 +25,20 @@ const NavBar = ({ links }: { links: TLink[] }) => {
           >
             <Home size={40} />
           </NavLink>
-          <div className="relative flex flex-col items-end w-96">
+          <div className="relative flex items-center justify-end gap-6 w-96">
+            <a
+              href="https://www.otheaogvana.no"
+              className="py-4 text-sm no-underline text-pink-accent"
+            >
+              Norsk
+            </a>
+
+            <a
+              href="https://www.otheaandvana.com"
+              className="py-4 text-sm no-underline text-pink-accent"
+            >
+              English
+            </a>
             <a
               onClick={() => setOpen(!open)}
               className="py-4 text-2xl text-pink-accent"
@@ -37,7 +50,7 @@ const NavBar = ({ links }: { links: TLink[] }) => {
                 "absolute right-0 flex flex-col bg-blue-dark p-10 transition-all rounded-5xl translate-x-10 text-right",
                 {
                   "h-auto -translate-y-full": !open,
-                  "mt-16 shadow-menu": open,
+                  "mt-56 shadow-menu": open,
                 }
               )}
             >
