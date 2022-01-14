@@ -11,12 +11,16 @@ import {
 import type { MetaFunction } from "remix";
 import type { LinksFunction } from "remix";
 import tailwindUrl from "./tailwind.css";
+import adelioWoff from "../public/fonts/AdelioDarmanto.woff";
+import adelioWoff2 from "../public/fonts/AdelioDarmanto.woff2";
+import carroisWoff from "../public/fonts/CarroisGothic-Regular.woff";
+import carroisWoff2 from "../public/fonts/CarroisGothic-Regular.woff2";
 import { getLinks } from "./api/getLinks";
 import NavBar from "./components/NavBar";
 import { TLink } from "./types/shared";
 
 export const links: LinksFunction = () => {
-  return [{ rel: "stylesheet", href: tailwindUrl }];
+  return [{ rel: "stylesheet", href: tailwindUrl, prefetch: true }];
 };
 
 export const meta: MetaFunction = () => {

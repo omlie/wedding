@@ -451,7 +451,7 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 html, body {
   min-height: 100vh;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 h1 {
@@ -743,10 +743,6 @@ li {
 .object-cover {
   -o-object-fit: cover;
      object-fit: cover;
-}
-
-.p-10 {
-  padding: 2.5rem;
 }
 
 .px-6 {
