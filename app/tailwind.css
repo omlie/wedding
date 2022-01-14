@@ -451,6 +451,7 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 html, body {
   min-height: 100vh;
+  overflow: hidden;
 }
 
 h1 {
@@ -601,6 +602,14 @@ li {
   --tw-backdrop-sepia:  ;
 }
 
+.visible {
+  visibility: visible;
+}
+
+.invisible {
+  visibility: hidden;
+}
+
 .absolute {
   position: absolute;
 }
@@ -677,8 +686,8 @@ li {
   flex: 1 1 0%;
 }
 
-.-translate-y-full {
-  --tw-translate-y: -100%;
+.translate-x-\[100vh\] {
+  --tw-translate-x: 100vh;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
@@ -748,6 +757,11 @@ li {
 .py-4 {
   padding-top: 1rem;
   padding-bottom: 1rem;
+}
+
+.px-10 {
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
 }
 
 .text-right {

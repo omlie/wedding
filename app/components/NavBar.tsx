@@ -4,12 +4,15 @@ import { Layout } from ".";
 import Home from "remixicon-react/HomeHeartFillIcon";
 import Menu from "remixicon-react/MenuLineIcon";
 import Close from "remixicon-react/CloseLineIcon";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import clsx from "clsx";
+import { useOnClickOutside } from "~/hooks";
 
 const NavBar = ({ links }: { links: TLink[] }) => {
   const transition = useTransition();
+  const ref = useRef<HTMLDivElement>(null);
   const [open, setOpen] = useState<boolean>(false);
+  useOnClickOutside(ref, () => setOpen(false));
 
   useEffect(() => {
     setOpen(false);
@@ -46,11 +49,12 @@ const NavBar = ({ links }: { links: TLink[] }) => {
               {!open ? <Menu size={40} /> : <Close size={40} />}
             </a>
             <div
+              ref={ref}
               className={clsx(
-                "absolute right-0 flex flex-col bg-blue-dark p-10 transition-all rounded-5xl text-right xl:translate-x-10",
+                "absolute mt-56 right-0 flex flex-col bg-blue-dark px-10 py-4 transition-all rounded-5xl text-right",
                 {
-                  "h-auto -translate-y-full": !open,
-                  "mt-56 shadow-menu": open,
+                  "h-auto translate-x-[100vh] invisible": !open,
+                  "shadow-menu visible xl:translate-x-10": open,
                 }
               )}
             >
