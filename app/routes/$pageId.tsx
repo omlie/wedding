@@ -1,6 +1,6 @@
 import { MetaFunction, useLoaderData } from "remix";
 import { getPageBySlug } from "~/api/getPageBySlug";
-import { ContentBlock, Layout, RichText } from "~/components";
+import { ContentBlock, Image, Layout, RichText } from "~/components";
 import { TInfoPage } from "~/types/shared";
 
 export const meta: MetaFunction = ({
@@ -29,13 +29,7 @@ export default function Index() {
   const { heading, image, body, contentBlocks }: TInfoPage = useLoaderData();
   return (
     <main>
-      {image && (
-        <img
-          className="object-cover w-full max-h-image"
-          src={image.file?.url}
-          alt={image.title}
-        />
-      )}
+      <Image image={image} />
       <Layout>
         <h1>{heading}</h1>
         <RichText content={body} />

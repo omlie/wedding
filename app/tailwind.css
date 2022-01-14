@@ -658,6 +658,10 @@ li {
   height: auto;
 }
 
+.h-\[512px\] {
+  height: 512px;
+}
+
 .max-h-image {
   max-height: 512px;
 }
