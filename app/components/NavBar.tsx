@@ -21,7 +21,10 @@ const NavBar = ({ links }: { links: TLink[] }) => {
   return (
     <nav className="w-screen h-auto transition-all bg-blue-dark text-orange-accent text-blue-jeans">
       <Layout className="flex flex-col justify-between gap-4" noMargin wide>
-        <div className="flex flex-row items-center justify-between w-full">
+        <div
+          ref={ref}
+          className="flex flex-row items-center justify-between w-full"
+        >
           <NavLink
             to="/"
             className="py-4 text-2xl text-pink-accent hover:text-orange-accent focus:text-orange-accent"
@@ -49,7 +52,6 @@ const NavBar = ({ links }: { links: TLink[] }) => {
               {!open ? <Menu size={40} /> : <Close size={40} />}
             </a>
             <div
-              ref={ref}
               className={clsx(
                 "absolute mt-56 right-0 flex flex-col bg-blue-dark px-10 py-4 transition-all rounded-5xl text-right",
                 {

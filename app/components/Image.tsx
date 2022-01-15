@@ -1,6 +1,6 @@
 const Image = ({ image }: { image?: any }) =>
   image ? (
-    <div className="w-full h-[512px]">
+    <div className="w-full lg:h-[512px]">
       <img
         className="object-cover w-full max-h-image"
         src={`${image.file?.url}?fm=jpg&w=1024&h=512`}
