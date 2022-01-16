@@ -1,8 +1,25 @@
-const Image = ({ image }: { image?: any }) =>
+import clsx from "clsx";
+import { TImage } from "~/types/shared";
+
+const Image = ({
+  image,
+  noFixedHeight = false,
+  className,
+}: {
+  image?: TImage;
+  noFixedHeight?: boolean;
+  className?: string;
+}) =>
   image ? (
-    <div className="w-full lg:h-[512px]">
+    <div
+      className={clsx("w-full", {
+        "lg:h-[512px]": !noFixedHeight,
+      })}
+    >
       <img
-        className="object-cover w-full max-h-image"
+        className={clsx("object-cover w-full max-h-image", {
+          [className ?? ""]: className,
+        })}
         src={`${image.file?.url}?fm=jpg&w=1024&h=512`}
         alt={image.title}
       />

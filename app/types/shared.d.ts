@@ -39,6 +39,19 @@ export type TPage = {
   contentBlocks: TContentBlock[];
 };
 
+export type TWishlistItem = {
+  name: string;
+  image?: TImage;
+  amount: number;
+  link: string;
+};
+
+export type TWishlistPage = {
+  heading: string;
+  body: Document | null;
+  items: TWishlistItem[];
+};
+
 export type TInfoPage = TPage & {
   slug: string;
 };

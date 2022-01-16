@@ -17,22 +17,26 @@ import carroisWoff from "../public/fonts/CarroisGothic-Regular.woff";
 import carroisWoff2 from "../public/fonts/CarroisGothic-Regular.woff2";
 import { getLinks } from "./api/getLinks";
 import NavBar from "./components/NavBar";
-import { TLink } from "./types/shared";
+import { TLink, TLocale } from "./types/shared";
+import { createContext } from "react";
+import { LocaleProvider } from "./hooks";
 
 export const links: LinksFunction = () => {
-  return [{ rel: "stylesheet", href: tailwindUrl, prefetch: true }];
+  return [{ rel: "stylesheet", href: tailwindUrl }];
 };
 
 export const meta: MetaFunction = () => {
   return { title: "Othea & Vana" };
 };
 
-export const loader: LoaderFunction = () => {
-  return getLinks();
+export const loader: LoaderFunction = async () => {
+  const link = await getLinks();
+  return { links: link, locale: process.env.LOCALE };
 };
 
 export default function App() {
-  const links: TLink[] = useLoaderData();
+  const { links, locale } = useLoaderData();
+
   return (
     <html lang="en">
       <head>
@@ -42,11 +46,13 @@ export default function App() {
         <Links />
       </head>
       <body>
-        <NavBar links={links} />
-        <Outlet />
-        <ScrollRestoration />
-        <Scripts />
-        {process.env.NODE_ENV === "development" && <LiveReload />}
+        <LocaleProvider locale={locale}>
+          <NavBar links={links} />
+          <Outlet />
+          <ScrollRestoration />
+          <Scripts />
+          {process.env.NODE_ENV === "development" && <LiveReload />}
+        </LocaleProvider>
       </body>
     </html>
   );

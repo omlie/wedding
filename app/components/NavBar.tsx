@@ -19,7 +19,7 @@ const NavBar = ({ links }: { links: TLink[] }) => {
   }, [transition]);
 
   return (
-    <nav className="w-screen h-auto transition-all bg-blue-dark text-orange-accent text-blue-jeans">
+    <nav className="z-50 w-screen h-auto transition-all bg-blue-dark text-orange-accent text-blue-jeans">
       <Layout className="flex flex-col justify-between gap-4" noMargin wide>
         <div
           ref={ref}
@@ -53,7 +53,7 @@ const NavBar = ({ links }: { links: TLink[] }) => {
             </a>
             <div
               className={clsx(
-                "absolute mt-56 right-0 flex flex-col bg-blue-dark px-10 py-4 transition-all rounded-5xl text-right",
+                "absolute top-24 right-0 flex flex-col bg-blue-dark px-10 py-4 transition-all rounded-5xl text-right z-100",
                 {
                   "h-auto translate-x-[100vh] invisible": !open,
                   "shadow-menu visible xl:translate-x-10": open,

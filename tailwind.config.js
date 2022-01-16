@@ -34,6 +34,7 @@ module.exports = {
     },
     boxShadow: {
       menu: "0 8px 8px -2px rgba(0,0,0,0.25)",
+      card: "0 8px 8px 0px rgba(0,0,0,0.25)",
     },
     borderRadius: {
       none: "0",
@@ -56,6 +57,9 @@ module.exports = {
       "13xl": "3.75rem",
       "14xl": "6rem",
       full: "9999px",
+    },
+    zIndex: {
+      100: 100,
     },
     extend: {},
   },
