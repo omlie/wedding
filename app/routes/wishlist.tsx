@@ -1,13 +1,8 @@
 import { useLoaderData } from "remix";
+import { getWishlistCounters } from "~/api/firebase/wishlist";
 import { getWishlistPage } from "~/api/getWishlistPage";
-import {
-  ContentBlock,
-  Image,
-  Layout,
-  RichText,
-  WishlistItem,
-} from "~/components";
-import { TPage, TWishlistPage } from "~/types/shared";
+import { Layout, RichText, WishlistItem } from "~/components";
+import { TWishlistPage } from "~/types/shared";
 
 export async function loader() {
   return getWishlistPage();

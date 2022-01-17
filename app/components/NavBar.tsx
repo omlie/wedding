@@ -60,15 +60,18 @@ const NavBar = ({ links }: { links: TLink[] }) => {
                 }
               )}
             >
-              {links.map(({ text, slug }) => (
-                <NavLink
-                  to={slug}
-                  key={slug}
-                  className="py-4 text-2xl no-underline text-pink-accent hover:text-orange-accent focus:text-orange-accent rounded-3xl"
-                >
-                  {text}
-                </NavLink>
-              ))}
+              {links.map(
+                ({ text, slug }) =>
+                  slug && (
+                    <NavLink
+                      to={slug}
+                      key={slug}
+                      className="py-4 text-2xl no-underline text-pink-accent hover:text-orange-accent focus:text-orange-accent rounded-3xl"
+                    >
+                      {text}
+                    </NavLink>
+                  )
+              )}
             </div>
           </div>
         </div>

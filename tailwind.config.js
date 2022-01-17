@@ -8,6 +8,7 @@ module.exports = {
       "orange-accent": "#D79750",
       "pink-accent": "#E79F91",
       text: "#1E292D",
+      black: "#000000",
     },
     fontFamily: {
       adelio: ["Adelio Darmanto"],
@@ -60,6 +61,7 @@ module.exports = {
     },
     zIndex: {
       100: 100,
+      1000: 1000,
     },
     extend: {},
   },

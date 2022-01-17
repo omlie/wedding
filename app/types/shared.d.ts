@@ -42,8 +42,10 @@ export type TPage = {
 export type TWishlistItem = {
   name: string;
   image?: TImage;
-  amount: number;
-  link: string;
+  amount?: number;
+  linkText?: string;
+  url?: string;
+  id: string;
 };
 
 export type TWishlistPage = {
@@ -57,6 +59,6 @@ export type TInfoPage = TPage & {
 };
 
 export type TLink = {
-  text: string;
-  slug: string;
+  text?: string;
+  slug?: string;
 };

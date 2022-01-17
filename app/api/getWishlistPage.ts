@@ -1,5 +1,5 @@
 import { fieldsParser } from "contentful-parsers";
-import { TWishlistPage } from "~/types/shared";
+import { TLink, TWishlistPage } from "~/types/shared";
 import { getContentfulClient } from "./contentful";
 
 export const getWishlistPage = async (): Promise<TWishlistPage | null> => {
