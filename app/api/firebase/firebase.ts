@@ -1,13 +1,21 @@
-import { initializeApp } from "firebase/app";
-import { getDatabase } from "firebase/database";
+import { getApps, initializeApp } from "firebase/app";
+import { Database, getDatabase } from "firebase/database";
 
-const firebaseConfig = {
+const firebaseConfig = () => ({
   apiKey: process.env.FIREBASE_API_KEY,
-  authDomain: "wedding-338212.firebaseapp.com",
-  databaseURL: "https://wishlist-wedding.europe-west1.firebasedatabase.app/",
-  storageBucket: "bucket.appspot.com",
+  authDomain: process.env.FIREBASE_AUTH_DOMAIN,
+  databaseURL: process.env.FIREBASE_DATABASE_URL,
+  storageBucket: process.env.FIREBASE_STORAGE_BUCKET,
+});
+
+const initFirebase = () => {
+  if (getApps.length > 0 || !process.env) return;
+
+  initializeApp(firebaseConfig());
 };
 
-initializeApp(firebaseConfig);
+export const firebaseDB = (): Database => {
+  initFirebase();
 
-export const db = getDatabase();
+  return getDatabase();
+};

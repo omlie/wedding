@@ -1,11 +1,27 @@
-import { useLoaderData } from "remix";
-import { getWishlistCounters } from "~/api/firebase/wishlist";
+import { getApps, initializeApp } from "firebase/app";
+import { Outlet, useLoaderData } from "remix";
+import { getWishlistCounter } from "~/api/firebase/wishlist";
 import { getWishlistPage } from "~/api/getWishlistPage";
 import { Layout, RichText, WishlistItem } from "~/components";
-import { TWishlistPage } from "~/types/shared";
+import { TWishlistItem, TWishlistPage } from "~/types/shared";
 
 export async function loader() {
-  return getWishlistPage();
+  const page = await getWishlistPage();
+
+  const updatedItems = page
+    ? await Promise.all<TWishlistItem>(
+        page?.items.map(async (item) => {
+          const alreadyRegistered = await getWishlistCounter(item.id);
+
+          return {
+            ...item,
+            amount: item.amount ? item.amount - alreadyRegistered : item.amount,
+          } as TWishlistItem;
+        })
+      )
+    : [];
+
+  return { ...page, items: updatedItems };
 }
 
 export default function Index() {
@@ -21,6 +37,7 @@ export default function Index() {
           ))}
         </div>
       </Layout>
+      <Outlet />
     </main>
   );
 }
