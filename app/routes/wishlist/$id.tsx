@@ -139,7 +139,6 @@ const WishListItemModal = () => {
           </div>
         </form>
       </Modal>
-      <Outlet />
     </>
   );
 };

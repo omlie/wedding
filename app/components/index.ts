@@ -5,3 +5,5 @@ export { default as RichText } from "./RichText";
 export { default as Image } from "./Image";
 export { default as WishlistItem } from "./WishlistItem";
 export { default as Modal } from "./Modal";
+export { default as RadioButtons } from "./RadioButtons";
+export { default as Input } from "./Input";
