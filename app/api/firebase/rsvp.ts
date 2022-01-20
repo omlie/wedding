@@ -3,6 +3,8 @@ import { firebaseDB } from "./firebase";
 
 const formIds: string[] = [
   "name",
+  "email",
+  "entourage",
   "attending",
   "hotel",
   "shuttle",

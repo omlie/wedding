@@ -47,7 +47,7 @@ const NavBar = ({ links }: { links: TLink[] }) => {
             </a>
             <a
               onClick={() => setOpen(!open)}
-              className="py-4 text-2xl text-pink-accent"
+              className="py-4 text-2xl cursor-pointer text-pink-accent hover:text-orange-accent"
             >
               {!open ? <Menu size={40} /> : <Close size={40} />}
             </a>

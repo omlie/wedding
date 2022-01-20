@@ -1,5 +1,5 @@
 import { useLoaderData } from "remix";
-import { getMainPage } from "~/api/getMainPage";
+import { getMainPage } from "~/api/contentful";
 import { ContentBlock, Image, Layout, RichText } from "~/components";
 import { TPage } from "~/types/shared";
 

@@ -1,4 +1,4 @@
-import { useNavigate } from "remix";
+import { ScrollRestoration, useNavigate } from "remix";
 import { Modal } from "~/components";
 import { useLocale } from "~/hooks";
 import { labels } from "~/i18n";
@@ -21,6 +21,7 @@ const Bus = () => {
           <span>{labels[locale].rsvp.busInfo}</span>
         </div>
       </Modal>
+      <ScrollRestoration />
     </>
   );
 };

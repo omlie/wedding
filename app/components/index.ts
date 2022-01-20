@@ -7,3 +7,5 @@ export { default as WishlistItem } from "./WishlistItem";
 export { default as Modal } from "./Modal";
 export { default as RadioButtons } from "./RadioButtons";
 export { default as Input } from "./Input";
+export { default as AutoCompleteInput } from "./AutoCompleteInput";
+export { default as FadeInContainer } from "./FadeInContainer";

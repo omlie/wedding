@@ -62,3 +62,8 @@ export type TLink = {
   text?: string;
   slug?: string;
 };
+
+export type TGuest = {
+  name: string;
+  plusOne: boolean;
+};

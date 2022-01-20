@@ -9,9 +9,13 @@ type TLabels = {
   registerItem: string;
   valueError: string;
   nameError: string;
+  yes: string;
+  no: string;
   rsvp: {
     formLabels: {
       name: string;
+      entourage: string;
+      email: string;
       attending: string;
       hotel: string;
       shuttle: string;
@@ -40,9 +44,13 @@ export const labels: TLocaleLabels = {
     registerItem: "Register purchase of {item}",
     valueError: "Invalid value",
     nameError: "Please enter your name",
+    yes: "Yes",
+    no: "No",
     rsvp: {
       formLabels: {
         name: "What is your name?",
+        entourage: "Please enter the names of the people you intend to bring",
+        email: "What email can we reach you at?",
         attending: "Are you attending?",
         hotel: "Are you in need of a hotel stay?",
         shuttle: "Do you need shuttle to the wedding location?",
@@ -69,9 +77,13 @@ export const labels: TLocaleLabels = {
     registerItem: "Registrer kjøp av {item}",
     valueError: "Ikke godkjent antall",
     nameError: "Vennligst skriv inn navnet ditt",
+    yes: "Ja",
+    no: "Nei",
     rsvp: {
       formLabels: {
         name: "Hva heter du?",
+        entourage: "Vennligst skriv inn navnet til person(ene) i følget ditt",
+        email: "Hvilken epost kan vi nå deg på?",
         attending: "Kommer du i bryllupet?",
         hotel: "Trenger du hotellovernatting?",
         shuttle: "Trenger du skyss til bryllupslokasjonen?",

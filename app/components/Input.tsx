@@ -1,19 +1,13 @@
-import { useState } from "react";
-
 type TInputType = "text" | "textarea";
 
 const Input = ({
   label,
   id,
-  onChange,
-  defaultValue,
   type = "text",
   required = false,
 }: {
   label: string;
   id: string;
-  onChange?: () => void;
-  defaultValue?: string;
   type?: TInputType;
   required?: boolean;
 }) => {
@@ -22,22 +16,20 @@ const Input = ({
       <label htmlFor={id}>{label}</label>
       {type === "text" ? (
         <input
-          className="p-2 text-black"
+          className="p-2 text-black border-2 border-blue-dark rounded-5xl"
           type="text"
           id={id}
           name={id}
-          onChange={onChange}
-          defaultValue={defaultValue}
           required={required}
+          autoComplete="off"
         />
       ) : (
         <textarea
-          className="p-2 text-black"
+          className="p-2 text-black border-2 border-blue-dark rounded-5xl"
           id={id}
           name={id}
-          onChange={onChange}
-          defaultValue={defaultValue}
           required={required}
+          autoComplete="off"
         />
       )}
     </div>

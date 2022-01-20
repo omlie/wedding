@@ -11,7 +11,7 @@ import {
 import type { MetaFunction } from "remix";
 import type { LinksFunction } from "remix";
 import tailwindUrl from "./tailwind.css";
-import { getLinks } from "./api/getLinks";
+import { getLinks } from "./api/contentful";
 import NavBar from "./components/NavBar";
 import { LocaleProvider } from "./hooks";
 

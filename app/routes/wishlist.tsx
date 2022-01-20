@@ -1,7 +1,6 @@
-import { getApps, initializeApp } from "firebase/app";
 import { Outlet, useLoaderData } from "remix";
 import { getWishlistCounter } from "~/api/firebase/wishlist";
-import { getWishlistPage } from "~/api/getWishlistPage";
+import { getWishlistPage } from "~/api/contentful";
 import { Layout, RichText, WishlistItem } from "~/components";
 import { TWishlistItem, TWishlistPage } from "~/types/shared";
 

@@ -9,6 +9,7 @@ module.exports = {
       "pink-accent": "#E79F91",
       text: "#1E292D",
       black: "#000000",
+      white: "#ffffff",
     },
     fontFamily: {
       adelio: ["Adelio Darmanto"],

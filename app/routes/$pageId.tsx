@@ -1,5 +1,5 @@
 import { MetaFunction, useLoaderData } from "remix";
-import { getPageBySlug } from "~/api/getPageBySlug";
+import { getPageBySlug } from "~/api/contentful";
 import { ContentBlock, Image, Layout, RichText } from "~/components";
 import { TInfoPage } from "~/types/shared";
 

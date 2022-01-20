@@ -11,8 +11,7 @@ import { useLocale } from "~/hooks";
 import { formatTemplateString, labels } from "~/i18n";
 import Plus from "remixicon-react/AddCircleFillIcon";
 import Minus from "remixicon-react/IndeterminateCircleFillIcon";
-import { Outlet } from "remix";
-import { getWishlistItem } from "~/api/getWishlistItem";
+import { getWishlistItem } from "~/api/contentful";
 import {
   getWishlistCounter,
   updateWishlistCounter,
