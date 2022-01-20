@@ -1,17 +1,10 @@
-import { useEffect, useState } from "react";
-// import {
-//   getWishlistCounter,
-//   updateWishlistCounter,
-// } from "~/api/firebase/wishlist";
 import { useLocale } from "~/hooks";
 import { formatTemplateString } from "~/i18n";
 import insertReactNodes from "~/i18n/formatTemplateString";
 import { labels } from "~/i18n/labels";
 import { TWishlistItem } from "~/types/shared";
-import { Image, Modal } from ".";
-import Plus from "remixicon-react/AddCircleFillIcon";
-import Minus from "remixicon-react/IndeterminateCircleFillIcon";
-import { NavLink } from "react-router-dom";
+import { Image } from ".";
+import { NavLink } from "remix";
 
 const WishlistItem = ({
   name,

@@ -33,7 +33,10 @@ const AutoCompleteInput = ({
   }, [value, filteredGuests]);
 
   useEffect(() => {
-    const fuzzy = new Fuse(guests, { keys: ["name"], threshold: 0.01 });
+    const fuzzy = new Fuse(guests, {
+      keys: ["name"],
+      threshold: 0.3,
+    });
 
     const searched = fuzzy.search(value).map((x) => x.item);
     setFilteredGuests(searched);

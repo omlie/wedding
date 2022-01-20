@@ -5,6 +5,7 @@ import {
   ScrollRestoration,
   LoaderFunction,
   useLoaderData,
+  NavLink,
 } from "remix";
 import {
   AutoCompleteInput,
@@ -19,7 +20,6 @@ import { addRsvp } from "~/api/firebase/rsvp";
 import Hotel from "remixicon-react/HotelBedFillIcon";
 import Bus from "remixicon-react/BusLineIcon";
 import InformationLine from "remixicon-react/InformationLineIcon";
-import { NavLink } from "react-router-dom";
 import { getGuests } from "~/api/contentful";
 import { TGuest } from "~/types/shared";
 import { useState } from "react";
@@ -58,7 +58,11 @@ const RSVP = () => {
     <main className="min-h-screen">
       <Layout className="min-h-full">
         <h1>RSVP</h1>
-        <form method="post" className="flex w-full h-full min-h-full gap-14">
+        <form
+          method="post"
+          className="flex w-full h-full min-h-full gap-14"
+          autoComplete="off"
+        >
           <div className="flex flex-col flex-1 h-full min-h-full rounded-5xl">
             <AutoCompleteInput
               label={formLabels.name}
@@ -87,6 +91,7 @@ const RSVP = () => {
                 <Input
                   label={formLabels.email}
                   id="email"
+                  type="email"
                   required={attending}
                 />
 
@@ -130,7 +135,7 @@ const RSVP = () => {
             className="relative flex-col hidden py-6 w-96 gap-14 lg:flex"
             hidden={!attending}
           >
-            <div className="relative flex flex-col gap-2 p-4 border-4 rounded-5xl border-blue-dark bg-pink-accent text-blue-dark">
+            <div className="relative flex flex-col gap-2 p-4 border-4 rounded-5xl border-blue-dark bg-pink-accent text-blue-dark shadow-card">
               <Hotel
                 className="absolute p-2 rounded-full -top-4 -right-4 bg-blue-dark text-pink-accent"
                 size={40}
@@ -138,7 +143,7 @@ const RSVP = () => {
               <span>{rsvpLabels.hotelInfo1}</span>
               <span>{rsvpLabels.hotelInfo2}</span>
             </div>
-            <div className="relative flex flex-col gap-2 p-4 border-4 rounded-5xl border-blue-dark bg-pink-accent text-blue-dark">
+            <div className="relative flex flex-col gap-2 p-4 border-4 rounded-5xl border-blue-dark bg-pink-accent text-blue-dark shadow-card">
               <Bus
                 className="absolute p-2 rounded-full -top-4 -right-4 bg-blue-dark text-pink-accent"
                 size={40}

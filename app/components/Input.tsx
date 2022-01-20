@@ -1,4 +1,4 @@
-type TInputType = "text" | "textarea";
+type TInputType = "text" | "textarea" | "email";
 
 const Input = ({
   label,
@@ -14,10 +14,10 @@ const Input = ({
   return (
     <div className="flex flex-col gap-2">
       <label htmlFor={id}>{label}</label>
-      {type === "text" ? (
+      {type !== "textarea" ? (
         <input
           className="p-2 text-black border-2 border-blue-dark rounded-5xl"
-          type="text"
+          type={type}
           id={id}
           name={id}
           required={required}
