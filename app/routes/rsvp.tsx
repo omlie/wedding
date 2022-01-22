@@ -83,6 +83,14 @@ const RSVP = () => {
               />
 
               <FadeInContainer hidden={!attending || !guest?.plusOne}>
+                <div className="relative flex flex-col gap-2 p-4 border-2 rounded-5xl border-blue-dark bg-pink-accent text-blue-dark shadow-card">
+                  <InformationLine
+                    className="absolute p-2 rounded-full -top-4 -right-4 bg-blue-dark text-pink-accent"
+                    size={40}
+                  />
+                  <span>{labels[locale].rsvp.oneRsvpPerHousehold}</span>
+                </div>
+
                 <Input
                   label={formLabels.entourage}
                   id="entourage"
