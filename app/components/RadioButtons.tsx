@@ -8,10 +8,12 @@ const RadioButtons = ({
   label,
   id,
   onChange,
+  required,
 }: {
   label: ReactNode;
   id: string;
   onChange?: (value: string) => void;
+  required: boolean;
 }) => {
   const locale = useLocale();
   const [selected, setSelected] = useState<string | undefined>();
@@ -35,7 +37,7 @@ const RadioButtons = ({
           onChange={handleChange}
           checked={selected === "Yes"}
           name={id}
-          required
+          required={required}
         />
         <label htmlFor={`yes-${id}`}>{labels[locale].yes}</label>
 
@@ -46,7 +48,7 @@ const RadioButtons = ({
           onChange={handleChange}
           checked={selected === "No"}
           name={id}
-          required
+          required={required}
         />
         <label htmlFor={`no-${id}`} onChange={handleChange}>
           {labels[locale].no}

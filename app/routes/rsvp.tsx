@@ -77,6 +77,7 @@ const RSVP = () => {
                 label={formLabels.attending}
                 id="attending"
                 onChange={onAttendingChange}
+                required
               />
 
               <FadeInContainer hidden={!attending || !guest?.plusOne}>
@@ -95,7 +96,11 @@ const RSVP = () => {
                   required={attending}
                 />
 
-                <RadioButtons label={formLabels.hotel} id="hotel" />
+                <RadioButtons
+                  label={formLabels.hotel}
+                  id="hotel"
+                  required={attending}
+                />
                 <NavLink
                   className="flex items-center gap-2 lg:hidden hover:text-blue-light"
                   to="hotel"
@@ -104,7 +109,11 @@ const RSVP = () => {
                   {rsvpLabels.hotelReadMore}
                 </NavLink>
 
-                <RadioButtons label={formLabels.shuttle} id="shuttle" />
+                <RadioButtons
+                  label={formLabels.shuttle}
+                  id="shuttle"
+                  required={attending}
+                />
                 <NavLink
                   className="flex items-center gap-2 lg:hidden hover:text-blue-light"
                   to="bus"

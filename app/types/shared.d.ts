@@ -66,4 +66,5 @@ export type TLink = {
 export type TGuest = {
   name: string;
   plusOne: boolean;
+  id: string;
 };
