@@ -6,7 +6,7 @@ import {
   useNavigate,
 } from "remix";
 import { useState } from "react";
-import { Modal } from "~/components";
+import { Input, Modal } from "~/components";
 import { useLocale } from "~/hooks";
 import { formatTemplateString, labels } from "~/i18n";
 import Plus from "remixicon-react/AddCircleFillIcon";
@@ -53,18 +53,9 @@ const WishListItemModal = () => {
   const navigate = useNavigate();
 
   const [registerValue, setRegisterValue] = useState<number>(1);
-  const [valueError, setValueError] = useState<boolean>(false);
-  const [registerName, setRegisterName] = useState<string>("");
-  const [nameError, setNameError] = useState<boolean>(false);
 
   const onValueChange = (value: number) => {
-    setValueError(false);
     if (amount && value <= amount && value > 0) setRegisterValue(value);
-  };
-
-  const onNameChange = (e: any) => {
-    setNameError(false);
-    setRegisterName(e.target.value);
   };
 
   return (
@@ -112,26 +103,11 @@ const WishListItemModal = () => {
               </button>
             </div>
 
-            {valueError && <span>{valueError}</span>}
-
-            <label htmlFor="name">{labels[locale].name}</label>
-            <input
-              onChange={onNameChange}
-              className="p-2"
-              id="name"
-              type="text"
-              value={registerName}
-            />
-            {nameError && <span>{nameError}</span>}
+            <Input label={labels[locale].name} id="name" required />
 
             <button
               type="submit"
               className="w-full p-2 mt-4 bg-blue-dark text-pink-accent rounded-5xl disabled:hover:text-pink-accent disabled:hover:bg-blue-dark hover:bg-blue-lightest hover:text-blue-dark disabled:opacity-70"
-              disabled={
-                registerName === "" ||
-                registerValue <= 0 ||
-                registerValue > (amount ?? 0)
-              }
             >
               {labels[locale].registerGift}
             </button>

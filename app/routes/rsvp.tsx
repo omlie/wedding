@@ -35,7 +35,9 @@ export const action: ActionFunction = async ({ request }) => {
 
   await addRsvp(formData);
 
-  return redirect("/");
+  const attending = formData.get("attending");
+
+  return redirect(`rsvp/registered?attending=${attending === "Yes"}`);
 };
 
 const RSVP = () => {

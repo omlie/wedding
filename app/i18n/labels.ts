@@ -28,6 +28,10 @@ type TLabels = {
     hotelInfo2: string;
     busReadMore: string;
     busInfo: string;
+    thanksForRegistering: string;
+    isAttending: string;
+    isNotAttending: string;
+    exploreInfo: string;
   };
 };
 type TLocaleLabels = { "en-AU": TLabels; nb: TLabels };
@@ -63,7 +67,11 @@ export const labels: TLocaleLabels = {
       hotelInfo2: `The rates for standard rooms single/double room 950,- per night (1 person) and 150,- in addition for extra person. Aka; 1100,- for two person room per night. This includes breakfast.`,
       busReadMore: "Read more about shuttle bus",
       busInfo:
-        "The wedding venue is located in Skjold, about 30 minutes from Haugesund. We will organize transport for anyone who would wants to, from a central location in Haugesund. Please let us know if you’d like to, more info will be provided on the website later.",
+        "The wedding venue is located in Skjold, about 30 minutes from Haugesund. We will organize transport for anyone who would wants to, from a central location in Haugesund. Please let us know if you'd like to, more info will be provided on the website later.",
+      thanksForRegistering: "Thank you for responding to your invitiation",
+      isAttending: "We can't wait to see you!",
+      isNotAttending: "We're sad you couldn't come",
+      exploreInfo: "Read more about our wedding here",
     },
   },
   nb: {
@@ -96,6 +104,11 @@ export const labels: TLocaleLabels = {
       hotelInfo2: "",
       busReadMore: "Les mer om transport til bryllupet",
       busInfo: "",
+      thanksForRegistering:
+        "Takk for at du svarte på invitasjonen til bryllupet vårt",
+      isAttending: "Vi gleder oss til å feire dagen sammen med deg",
+      isNotAttending: "Så dumt du ikke kunne komme",
+      exploreInfo: "Her kan du finne mer informasjon om bryllupet vårt:",
     },
   },
 };

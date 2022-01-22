@@ -17,16 +17,16 @@ export const getLinks = async (): Promise<TLink[]> => {
       (item) => fieldsParser(item) as TInfoPage
     );
 
-    const rsvpLink = [{ text: "RSVP", slug: "rsvp" }];
+    const rsvpLink = [{ text: "RSVP", slug: "/rsvp" }];
 
     const wishlistLink = wishlistPage
-      ? [{ text: wishlistPage.heading, slug: "wishlist" }]
+      ? [{ text: wishlistPage.heading, slug: "/wishlist" }]
       : [];
 
     return [
       ...rsvpLink,
       ...wishlistLink,
-      ...(fields?.map((x) => ({ text: x.heading, slug: x.slug })) ?? []),
+      ...(fields?.map((x) => ({ text: x.heading, slug: `/${x.slug}` })) ?? []),
     ];
   }
 
