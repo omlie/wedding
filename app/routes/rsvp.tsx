@@ -37,7 +37,7 @@ export const action: ActionFunction = async ({ request }) => {
 
   const attending = formData.get("attending");
 
-  return redirect(`rsvp/registered?attending=${attending === "Yes"}`);
+  return redirect(`/rsvp/registered?attending=${attending === "Yes"}`);
 };
 
 const RSVP = () => {

@@ -654,6 +654,14 @@ li {
   right: -1rem;
 }
 
+.right-4 {
+  right: 1rem;
+}
+
+.top-2 {
+  top: 0.5rem;
+}
+
 .-z-1000 {
   z-index: -1000;
 }
@@ -837,6 +845,10 @@ li {
   justify-content: flex-end;
 }
 
+.justify-center {
+  justify-content: center;
+}
+
 .justify-between {
   justify-content: space-between;
 }
@@ -896,6 +908,10 @@ li {
 
 .border {
   border-width: 1px;
+}
+
+.border-b-2 {
+  border-bottom-width: 2px;
 }
 
 .border-blue-dark {
