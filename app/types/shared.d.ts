@@ -67,4 +67,5 @@ export type TGuest = {
   name: string;
   plusOne: boolean;
   id: string;
+  responded?: boolean;
 };

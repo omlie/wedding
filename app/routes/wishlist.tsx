@@ -30,7 +30,7 @@ export default function Index() {
       <Layout>
         <h1>{heading}</h1>
         <RichText content={body} />
-        <div className="grid grid-cols-1 gap-6 lg:grid-cols-3 auto-rows-fr">
+        <div className="grid w-full grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 auto-rows-fr">
           {items?.map((item) => (
             <WishlistItem key={item.name} {...item} />
           ))}

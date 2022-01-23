@@ -16,18 +16,25 @@ import {
 } from "~/components";
 import { useLocale } from "~/hooks";
 import { labels } from "~/i18n";
-import { addRsvp } from "~/api/firebase/rsvp";
+import { addRsvp, respondedGuests } from "~/api/firebase/rsvp";
 import Hotel from "remixicon-react/HotelBedFillIcon";
 import Bus from "remixicon-react/BusLineIcon";
 import InformationLine from "remixicon-react/InformationLineIcon";
 import { getGuests } from "~/api/contentful";
 import { TGuest } from "~/types/shared";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export const loader: LoaderFunction = async () => {
   const guests = await getGuests();
 
-  return { guests };
+  const responded = await respondedGuests();
+
+  const guestsWithResponseStatus = guests?.map((guest) => ({
+    ...guest,
+    responded: responded.includes(guest.name),
+  }));
+
+  return { guests: guestsWithResponseStatus };
 };
 
 export const action: ActionFunction = async ({ request }) => {
@@ -57,7 +64,7 @@ const RSVP = () => {
   };
 
   return (
-    <main className="min-h-screen">
+    <main>
       <Layout className="min-h-full">
         <h1>RSVP</h1>
         <form
@@ -74,7 +81,21 @@ const RSVP = () => {
               onChange={onGuestChange}
             />
 
-            <FadeInContainer hidden={!guest}>
+            <FadeInContainer
+              hidden={!guest || (guest && guest.responded === false)}
+            >
+              <div className="relative flex flex-col gap-2 p-4 border-2 rounded-5xl border-blue-dark bg-pink-accent text-blue-dark shadow-card">
+                <InformationLine
+                  className="absolute p-2 rounded-full -top-4 -right-4 bg-blue-dark text-pink-accent"
+                  size={40}
+                />
+                <span>{labels[locale].rsvp.hasResponded}</span>
+              </div>
+            </FadeInContainer>
+
+            <FadeInContainer
+              hidden={!guest || (guest && guest.responded === true)}
+            >
               <RadioButtons
                 label={formLabels.attending}
                 id="attending"

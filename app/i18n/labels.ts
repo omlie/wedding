@@ -33,6 +33,7 @@ type TLabels = {
     isNotAttending: string;
     exploreInfo: string;
     oneRsvpPerHousehold: string;
+    hasResponded: string;
   };
 };
 type TLocaleLabels = { "en-AU": TLabels; nb: TLabels };
@@ -75,6 +76,8 @@ export const labels: TLocaleLabels = {
       exploreInfo: "Read more about our wedding here",
       oneRsvpPerHousehold:
         "We only require one RSVP per household. Please enter the name(s) of your family/+1 down below. Also remember to take them into account when filling out the other fields.",
+      hasResponded:
+        "You already responded to your invitation. It anything has changed since then, please contact Othea Vikse or Vana Prayitno.",
     },
   },
   nb: {
@@ -117,6 +120,8 @@ export const labels: TLocaleLabels = {
       exploreInfo: "Her kan du finne mer informasjon om bryllupet vårt:",
       oneRsvpPerHousehold:
         "Vi trenger bare at en husholdning registrerer seg én gang. Fyll derfor inn navnet til de du tar med deg i bryllupet under her. Husk også å ta de i betraktningen når du fyller ut de andre feltene.",
+      hasResponded:
+        "Du har allerede svart på invitasjonen din. Hvis noe har endret seg siden da, ta kontakt med Othea Vikse eller Vana Prayitno.",
     },
   },
 };
