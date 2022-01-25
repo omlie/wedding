@@ -25,12 +25,31 @@ const NavBar = ({ links }: { links: TLink[] }) => {
           ref={ref}
           className="flex flex-row items-center justify-between w-full"
         >
-          <NavLink
-            to="/"
-            className="py-4 text-2xl text-pink-accent hover:text-orange-accent focus:text-orange-accent"
-          >
-            <Home size={40} />
-          </NavLink>
+          <div className="relative flex items-center justify-end gap-6">
+            <NavLink
+              to="/"
+              className="py-4 text-2xl text-pink-accent hover:text-orange-accent focus:text-orange-accent"
+            >
+              <Home size={40} />
+            </NavLink>
+            {links.map(
+              ({ text, slug }) =>
+                slug && (
+                  <NavLink
+                    to={slug}
+                    key={slug}
+                    className={clsx(
+                      "py-4 text-2xl no-underline text-pink-accent hover:text-orange-accent focus:text-orange-accent rounded-3xl whitespace-nowrap",
+                      {
+                        "hidden md:block": !slug.includes("rsvp"),
+                      }
+                    )}
+                  >
+                    {text}
+                  </NavLink>
+                )
+            )}
+          </div>
           <div className="relative flex items-center justify-end gap-6 w-96">
             <a
               href="https://www.otheaogvana.no"
@@ -47,7 +66,7 @@ const NavBar = ({ links }: { links: TLink[] }) => {
             </a>
             <a
               onClick={() => setOpen(!open)}
-              className="py-4 text-2xl cursor-pointer text-pink-accent hover:text-orange-accent"
+              className="py-4 text-2xl cursor-pointer text-pink-accent hover:text-orange-accent md:hidden"
             >
               {!open ? <Menu size={40} /> : <Close size={40} />}
             </a>

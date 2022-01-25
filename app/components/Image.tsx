@@ -20,7 +20,7 @@ const Image = ({
         className={clsx("object-cover w-full max-h-image", {
           [className ?? ""]: className,
         })}
-        src={`${image.file?.url}?fm=jpg`}
+        src={`${image.file?.url}`}
         alt={image.title}
       />
     </div>
