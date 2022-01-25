@@ -11,6 +11,7 @@ type TLabels = {
   nameError: string;
   yes: string;
   no: string;
+  price: string;
   rsvp: {
     formLabels: {
       name: string;
@@ -52,6 +53,7 @@ export const labels: TLocaleLabels = {
     nameError: "Please enter your name",
     yes: "Yes",
     no: "No",
+    price: "Price: {price}",
     rsvp: {
       formLabels: {
         name: "What is your name?",
@@ -93,6 +95,7 @@ export const labels: TLocaleLabels = {
     nameError: "Vennligst skriv inn navnet ditt",
     yes: "Ja",
     no: "Nei",
+    price: "Pris: {price}",
     rsvp: {
       formLabels: {
         name: "Hva heter du?",

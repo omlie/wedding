@@ -27,7 +27,7 @@ export type TImage = {
 };
 
 export type TContentBlock = {
-  heading: string;
+  heading?: string;
   image?: TImage;
   body: Document | null;
 };
@@ -46,6 +46,7 @@ export type TWishlistItem = {
   linkText?: string;
   url?: string;
   id: string;
+  price?: string;
 };
 
 export type TWishlistPage = {

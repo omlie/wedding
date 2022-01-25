@@ -13,6 +13,7 @@ const WishlistItem = ({
   linkText,
   url,
   id,
+  price,
 }: TWishlistItem) => {
   const locale = useLocale();
 
@@ -20,7 +21,7 @@ const WishlistItem = ({
 
   return (
     <div className="relative flex flex-col h-full overflow-hidden no-underline rounded-5xl bg-blue-dark hover:no-underline text-blue-lightest hover:text-blue-lightest shadow-card">
-      <div className="flex flex-col justify-between">
+      <div className="flex flex-col justify-between h-full">
         <Image
           image={image}
           noFixedHeight
@@ -34,7 +35,7 @@ const WishlistItem = ({
             : labels[locale].unlimited}
         </span>
         <div className="flex flex-col justify-between w-full h-full gap-4 p-4">
-          <h3 className="break-words">{name}</h3>
+          <h3 className="flex-1 break-words">{name}</h3>
           {url && (
             <span>
               {insertReactNodes(labels[locale].canBeBoughtAt, {
@@ -46,8 +47,11 @@ const WishlistItem = ({
               })}
             </span>
           )}
-          <div className="flex justify-between gap-6">
-            <div className=""></div>
+          <div className="flex items-center justify-between gap-6">
+            <span>
+              {price &&
+                formatTemplateString(labels[locale].price, { price: price })}
+            </span>
             {amount && amount > 0 ? (
               <NavLink
                 to={id}
