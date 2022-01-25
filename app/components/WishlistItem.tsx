@@ -9,6 +9,7 @@ import { NavLink } from "remix";
 const WishlistItem = ({
   name,
   image,
+  description,
   amount,
   linkText,
   url,
@@ -20,7 +21,7 @@ const WishlistItem = ({
   const hasAmount = amount || amount === 0;
 
   return (
-    <div className="relative flex flex-col h-full overflow-hidden no-underline rounded-5xl bg-blue-dark hover:no-underline text-blue-lightest hover:text-blue-lightest shadow-card">
+    <div className="relative flex flex-col flex-1 h-full overflow-hidden no-underline rounded-5xl bg-blue-dark hover:no-underline text-blue-lightest hover:text-blue-lightest shadow-card">
       <div className="flex flex-col justify-between h-full">
         <Image
           image={image}
@@ -34,8 +35,9 @@ const WishlistItem = ({
               })
             : labels[locale].unlimited}
         </span>
-        <div className="flex flex-col justify-between w-full h-full gap-4 p-4">
+        <div className="flex flex-col justify-between flex-1 w-full h-full gap-4 p-4">
           <h3 className="flex-1 break-words">{name}</h3>
+          {description && <p>{description}</p>}
           {url && (
             <span>
               {insertReactNodes(labels[locale].canBeBoughtAt, {
@@ -55,12 +57,12 @@ const WishlistItem = ({
             {amount && amount > 0 ? (
               <NavLink
                 to={id}
-                className="p-2 text-center no-underline bg-pink-accent hover:bg-orange-accent text-blue-dark rounded-5xl hover:no-underline hover:text-blue-dark"
+                className="p-2 text-center no-underline bg-pink-accent hover:bg-orange-accent text-blue-dark rounded-5xl hover:no-underline hover:text-blue-dark whitespace-nowrap"
               >
                 {labels[locale].registerGift}
               </NavLink>
             ) : (
-              <span className="p-2 text-center bg-pink-accent text-blue-dark rounded-5xl opacity-70">
+              <span className="p-2 text-center bg-pink-accent text-blue-dark rounded-5xl opacity-70 whitespace-nowrap">
                 {labels[locale].registerGift}
               </span>
             )}

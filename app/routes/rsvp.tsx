@@ -192,7 +192,6 @@ const RSVP = () => {
             </div>
           </FadeInContainer>
         </form>
-        <ScrollRestoration />
         <Outlet />
       </Layout>
     </main>

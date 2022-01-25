@@ -1,4 +1,4 @@
-import { Outlet, useLoaderData } from "remix";
+import { Outlet, ScrollRestoration, useLoaderData } from "remix";
 import { getWishlistCounter } from "~/api/firebase/wishlist";
 import { getWishlistPage } from "~/api/contentful";
 import { Layout, RichText, WishlistItem } from "~/components";
@@ -30,7 +30,7 @@ export default function Index() {
       <Layout>
         <h1>{heading}</h1>
         <RichText content={body} />
-        <div className="grid w-full grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 auto-rows-fr">
+        <div className="flex flex-col w-full gap-6 sm:grid sm:grid-cols-2 md:grid-cols-3">
           {items?.map((item) => (
             <WishlistItem key={item.name} {...item} />
           ))}

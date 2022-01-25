@@ -2,6 +2,7 @@ import {
   ActionFunction,
   LoaderFunction,
   redirect,
+  ScrollRestoration,
   useLoaderData,
   useNavigate,
 } from "remix";
@@ -59,62 +60,60 @@ const WishListItemModal = () => {
   };
 
   return (
-    <>
-      <Modal
-        open={true}
-        onClose={() => {
-          navigate("../");
-        }}
-        className="border bg-pink-accent text-blue-dark border-blue-dark"
-      >
-        <form method="post">
-          <div className="flex flex-col gap-2 p-6">
-            <h4>
-              {formatTemplateString(labels[locale].registerItem, {
-                item: name,
-              })}
-            </h4>
+    <Modal
+      open={true}
+      onClose={() => {
+        navigate("../");
+      }}
+      className="border bg-pink-accent text-blue-dark border-blue-dark"
+    >
+      <form method="post">
+        <div className="flex flex-col gap-2 p-6">
+          <h4>
+            {formatTemplateString(labels[locale].registerItem, {
+              item: name,
+            })}
+          </h4>
 
-            <label htmlFor="amount">{labels[locale].amount}</label>
-            <div className="flex items-center justify-start gap-6">
-              <button
-                type="button"
-                onClick={() => onValueChange(registerValue - 1)}
-                className="hover:text-blue-light disabled:hover:text-blue-dark disabled:opacity-70"
-                disabled={registerValue <= 1}
-              >
-                <Minus size={40} />
-              </button>
-              <span>{registerValue}</span>
-              <input
-                name="amount"
-                className="hidden"
-                type="number"
-                value={registerValue}
-                onChange={() => {}}
-              />
-              <button
-                type="button"
-                onClick={() => onValueChange(registerValue + 1)}
-                className="hover:text-blue-light disabled:hover:text-blue-dark disabled:opacity-70"
-                disabled={registerValue === 0}
-              >
-                <Plus size={40} />
-              </button>
-            </div>
-
-            <Input label={labels[locale].name} id="name" required />
-
+          <label htmlFor="amount">{labels[locale].amount}</label>
+          <div className="flex items-center justify-start gap-6">
             <button
-              type="submit"
-              className="w-full p-2 mt-4 bg-blue-dark text-pink-accent rounded-5xl disabled:hover:text-pink-accent disabled:hover:bg-blue-dark hover:bg-blue-lightest hover:text-blue-dark disabled:opacity-70"
+              type="button"
+              onClick={() => onValueChange(registerValue - 1)}
+              className="hover:text-blue-light disabled:hover:text-blue-dark disabled:opacity-70"
+              disabled={registerValue <= 1}
             >
-              {labels[locale].registerGift}
+              <Minus size={40} />
+            </button>
+            <span>{registerValue}</span>
+            <input
+              name="amount"
+              className="hidden"
+              type="number"
+              value={registerValue}
+              onChange={() => {}}
+            />
+            <button
+              type="button"
+              onClick={() => onValueChange(registerValue + 1)}
+              className="hover:text-blue-light disabled:hover:text-blue-dark disabled:opacity-70"
+              disabled={registerValue === 0}
+            >
+              <Plus size={40} />
             </button>
           </div>
-        </form>
-      </Modal>
-    </>
+
+          <Input label={labels[locale].name} id="name" required />
+
+          <button
+            type="submit"
+            className="w-full p-2 mt-4 bg-blue-dark text-pink-accent rounded-5xl disabled:hover:text-pink-accent disabled:hover:bg-blue-dark hover:bg-blue-lightest hover:text-blue-dark disabled:opacity-70"
+          >
+            {labels[locale].registerGift}
+          </button>
+        </div>
+      </form>
+    </Modal>
   );
 };
 
