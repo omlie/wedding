@@ -11,7 +11,9 @@ const RichText = ({
 }) => {
   return content ? (
     <div
-      className={clsx("flex-col flex gap-6", { [className ?? ""]: className })}
+      className={clsx("flex-col flex gap-6 max-w-3xl", {
+        [className ?? ""]: className,
+      })}
     >
       {documentToReactComponents(content)}
     </div>

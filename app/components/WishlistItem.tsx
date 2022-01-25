@@ -38,22 +38,29 @@ const WishlistItem = ({
           {url && (
             <span>
               {insertReactNodes(labels[locale].canBeBoughtAt, {
-                link: <a href={url}>{linkText ?? url}</a>,
+                link: (
+                  <a href={url} target="_blank">
+                    {linkText ?? url}
+                  </a>
+                ),
               })}
             </span>
           )}
-          {amount && amount > 0 ? (
-            <NavLink
-              to={id}
-              className="p-2 text-center no-underline bg-pink-accent hover:bg-orange-accent text-blue-dark rounded-5xl hover:no-underline hover:text-blue-dark"
-            >
-              {labels[locale].registerGift}
-            </NavLink>
-          ) : (
-            <span className="p-2 text-center bg-pink-accent text-blue-dark rounded-5xl opacity-70">
-              {labels[locale].registerGift}
-            </span>
-          )}
+          <div className="flex justify-between gap-6">
+            <div className=""></div>
+            {amount && amount > 0 ? (
+              <NavLink
+                to={id}
+                className="p-2 text-center no-underline bg-pink-accent hover:bg-orange-accent text-blue-dark rounded-5xl hover:no-underline hover:text-blue-dark"
+              >
+                {labels[locale].registerGift}
+              </NavLink>
+            ) : (
+              <span className="p-2 text-center bg-pink-accent text-blue-dark rounded-5xl opacity-70">
+                {labels[locale].registerGift}
+              </span>
+            )}
+          </div>
         </div>
       </div>
     </div>
