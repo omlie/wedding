@@ -16,7 +16,7 @@ export default function Index() {
   return (
     <main>
       <Image image={image} />
-      <Layout>
+      <Layout className="items-center">
         <h1>{heading}</h1>
         <div className="flex items-center justify-between h-full gap-8">
           <h3 className="py-6 text-center max-w-[175px]">
@@ -27,9 +27,13 @@ export default function Index() {
             {labels[locale].location}
           </h3>
         </div>
-        <RichText content={body} />
+        <RichText className="items-center text-center" content={body} />
         {contentBlocks?.map((block) => (
-          <ContentBlock key={block.heading} {...block} />
+          <ContentBlock
+            className="items-center text-center"
+            key={block.heading}
+            {...block}
+          />
         ))}
       </Layout>
     </main>
