@@ -12,6 +12,8 @@ type TLabels = {
   yes: string;
   no: string;
   price: string;
+  date: string;
+  location: string;
   rsvp: {
     formLabels: {
       name: string;
@@ -54,6 +56,8 @@ export const labels: TLocaleLabels = {
     yes: "Yes",
     no: "No",
     price: "Price: {price}",
+    date: "25th of June, 2022",
+    location: "Haugesund, Norway",
     rsvp: {
       formLabels: {
         name: "What is your name?",
@@ -96,6 +100,8 @@ export const labels: TLocaleLabels = {
     yes: "Ja",
     no: "Nei",
     price: "Pris: {price}",
+    date: "25 juni 2022",
+    location: "Haugesund",
     rsvp: {
       formLabels: {
         name: "Hva heter du?",
