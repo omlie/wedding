@@ -30,6 +30,7 @@ export type TContentBlock = {
   heading?: string;
   image?: TImage;
   body: Document | null;
+  id: string;
 };
 
 export type TPage = {

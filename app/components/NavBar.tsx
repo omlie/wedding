@@ -43,7 +43,7 @@ const NavBar = ({ links }: { links: TLink[] }) => (
           </a>
         </div>
       </div>
-      <div className="flex flex-row items-center w-full gap-6 sm:hidden">
+      <div className="flex flex-row items-center w-full gap-6 overflow-x-scroll sm:hidden">
         {links.map(
           ({ text, slug }) =>
             slug && (

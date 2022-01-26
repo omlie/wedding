@@ -698,10 +698,6 @@ li {
   display: flex;
 }
 
-.grid {
-  display: grid;
-}
-
 .hidden {
   display: none;
 }
@@ -718,8 +714,8 @@ li {
   height: 250px;
 }
 
-.h-32 {
-  height: 8rem;
+.h-20 {
+  height: 5rem;
 }
 
 .max-h-image {
@@ -742,10 +738,6 @@ li {
   min-height: 100%;
 }
 
-.min-h-\[310px\] {
-  min-height: 310px;
-}
-
 .w-full {
   width: 100%;
 }
@@ -756,6 +748,10 @@ li {
 
 .w-auto {
   width: auto;
+}
+
+.w-\[110px\] {
+  width: 110px;
 }
 
 .w-96 {
@@ -778,10 +774,6 @@ li {
   max-width: 48rem;
 }
 
-.max-w-\[175px\] {
-  max-width: 175px;
-}
-
 .max-w-sm {
   max-width: 24rem;
 }
@@ -800,18 +792,6 @@ li {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
-.auto-cols-fr {
-  grid-auto-columns: minmax(0, 1fr);
-}
-
-.auto-rows-fr {
-  grid-auto-rows: minmax(0, 1fr);
-}
-
-.grid-cols-1 {
-  grid-template-columns: repeat(1, minmax(0, 1fr));
-}
-
 .flex-row {
   flex-direction: row;
 }
@@ -822,10 +802,6 @@ li {
 
 .flex-wrap {
   flex-wrap: wrap;
-}
-
-.flex-nowrap {
-  flex-wrap: nowrap;
 }
 
 .items-start {
@@ -876,6 +852,10 @@ li {
   overflow: hidden;
 }
 
+.overflow-x-scroll {
+  overflow-x: scroll;
+}
+
 .whitespace-nowrap {
   white-space: nowrap;
 }
@@ -909,12 +889,16 @@ li {
   border-width: 2px;
 }
 
+.border-4 {
+  border-width: 4px;
+}
+
 .border {
   border-width: 1px;
 }
 
-.border-4 {
-  border-width: 4px;
+.border-r-2 {
+  border-right-width: 2px;
 }
 
 .border-blue-dark {
@@ -922,9 +906,9 @@ li {
   border-color: rgb(85 112 119 / var(--tw-border-opacity));
 }
 
-.border-r-black {
+.border-black {
   --tw-border-opacity: 1;
-  border-right-color: rgb(0 0 0 / var(--tw-border-opacity));
+  border-color: rgb(0 0 0 / var(--tw-border-opacity));
 }
 
 .bg-white {
@@ -1161,16 +1145,8 @@ li {
 }
 
 @media (min-width: 768px) {
-  .md\:grid {
-    display: grid;
-  }
-
   .md\:grid-cols-3 {
     grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-
-  .md\:grid-cols-2 {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
@@ -1185,9 +1161,5 @@ li {
 
   .lg\:h-\[512px\] {
     height: 512px;
-  }
-
-  .lg\:grid-cols-3 {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }

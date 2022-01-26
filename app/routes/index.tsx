@@ -19,19 +19,17 @@ export default function Index() {
       <Layout className="items-center">
         <h1>{heading}</h1>
         <div className="flex items-center justify-between h-full gap-8">
-          <h3 className="py-6 text-center max-w-[175px]">
-            {labels[locale].date}
-          </h3>
-          <span className="h-32 border border-r-black"></span>
-          <h3 className="py-6  text-center max-w-[175px]">
+          <h5 className="py-6 text-center w-[110px]">{labels[locale].date}</h5>
+          <span className="h-20 border-r-2 border-black"></span>
+          <h5 className="py-6  text-center w-[110px]">
             {labels[locale].location}
-          </h3>
+          </h5>
         </div>
         <RichText className="items-center text-center" content={body} />
         {contentBlocks?.map((block) => (
           <ContentBlock
+            key={block.id}
             className="items-center text-center"
-            key={block.heading}
             {...block}
           />
         ))}

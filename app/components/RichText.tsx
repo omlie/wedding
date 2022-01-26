@@ -21,7 +21,7 @@ const RichText = ({
     },
   };
 
-  return content ? (
+  return content !== null ? (
     <div
       className={clsx("flex-col flex gap-6 max-w-3xl", {
         [className ?? ""]: className,
