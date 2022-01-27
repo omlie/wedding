@@ -19,9 +19,9 @@ export default function Index() {
       <Layout className="items-center">
         <h1>{heading}</h1>
         <div className="flex items-center justify-between h-full gap-8">
-          <h5 className="py-6 text-center w-[110px]">{labels[locale].date}</h5>
+          <h5 className="py-6 text-center w-[120px]">{labels[locale].date}</h5>
           <span className="h-20 border-r-2 border-black"></span>
-          <h5 className="py-6  text-center w-[110px]">
+          <h5 className="py-6  text-center w-[120px]">
             {labels[locale].location}
           </h5>
         </div>

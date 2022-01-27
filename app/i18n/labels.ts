@@ -100,7 +100,7 @@ export const labels: TLocaleLabels = {
     yes: "Ja",
     no: "Nei",
     price: "Pris: {price}",
-    date: "25 juni 2022",
+    date: "25. juni 2022",
     location: "Haugesund",
     rsvp: {
       formLabels: {

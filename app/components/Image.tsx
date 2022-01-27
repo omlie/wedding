@@ -5,12 +5,14 @@ const Image = ({
   image,
   noFixedHeight = false,
   className,
+  width = 1024,
 }: {
   image?: TImage;
   noFixedHeight?: boolean;
   className?: string;
-}) =>
-  image ? (
+  width?: number;
+}) => {
+  return image ? (
     <div
       className={clsx("w-full", {
         "lg:h-[512px]": !noFixedHeight,
@@ -20,10 +22,11 @@ const Image = ({
         className={clsx("object-cover w-full max-h-image", {
           [className ?? ""]: className,
         })}
-        src={`${image.file?.url}`}
+        src={`${image.file?.url}?w=${width}`}
         alt={image.title}
       />
     </div>
   ) : null;
+};
 
 export default Image;

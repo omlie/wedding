@@ -15,7 +15,7 @@ const ContentBlock = ({
         clsx("flex flex-col gap-6", { [className ?? ""]: className })
       )}
     >
-      <Image image={image} />
+      <Image image={image} noFixedHeight />
       {heading && <h2 className="text-3xl">{heading}</h2>}
       {body && <RichText content={body} className={className} />}
     </div>

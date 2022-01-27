@@ -26,7 +26,8 @@ const WishlistItem = ({
         <Image
           image={image}
           noFixedHeight
-          className="max-h-[250px] h-[250px] overflow-hidden min-h-[250px]"
+          className="sm:max-h-[250px] sm:h-[250px] overflow-hidden min-h-[250px]"
+          width={600}
         />
         <span className="absolute top-0 right-0 p-2 font-extrabold rounded-bl-5xl bg-pink-accent text-blue-dark">
           {hasAmount
