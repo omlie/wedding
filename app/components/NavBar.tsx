@@ -43,14 +43,14 @@ const NavBar = ({ links }: { links: TLink[] }) => (
           </a>
         </div>
       </div>
-      <div className="flex flex-row items-center w-full gap-6 overflow-x-scroll sm:hidden">
+      <div className="flex flex-row flex-wrap items-center w-full gap-3 sm:hidden">
         {links.map(
           ({ text, slug }) =>
             slug && (
               <NavLink
                 to={slug}
                 key={slug}
-                className="py-4 no-underline text-pink-accent hover:text-orange-accent focus:text-orange-accent rounded-3xl whitespace-nowrap"
+                className="py-2 no-underline text-pink-accent hover:text-orange-accent focus:text-orange-accent rounded-3xl whitespace-nowrap"
               >
                 {text}
               </NavLink>

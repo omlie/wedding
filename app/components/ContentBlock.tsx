@@ -12,7 +12,7 @@ const ContentBlock = ({
   return (
     <div
       className={overrideTailwindClasses(
-        clsx("flex flex-col gap-6", { [className ?? ""]: className })
+        clsx("flex flex-col gap-6 w-full", { [className ?? ""]: className })
       )}
     >
       <Image image={image} noFixedHeight />

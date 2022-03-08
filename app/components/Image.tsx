@@ -12,15 +12,26 @@ const Image = ({
   className?: string;
   width?: number;
 }) => {
+  const isPng = image?.file?.contentType.includes("png");
+
   return image ? (
     <div
-      className={clsx("w-full", {
+      className={clsx("w-full object-cover", {
         "lg:h-[512px]": !noFixedHeight,
       })}
     >
       <img
-        className={clsx("object-cover w-full max-h-image", {
+        className={clsx("w-full max-h-image", {
           [className ?? ""]: className,
+          "object-contain":
+            isPng ||
+            (image.file?.details.image.height ?? 0) >
+              (image.file?.details.image.width ?? 0),
+          "object-cover":
+            !isPng &&
+            (image.file?.details.image.height ?? 0) <
+              (image.file?.details.image.width ?? 0),
+          "drop-shadow-lg": isPng,
         })}
         src={`${image.file?.url}?w=${width}`}
         alt={image.title}
