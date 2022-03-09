@@ -1,4 +1,4 @@
-import { MetaFunction, useLoaderData } from "remix";
+import { MetaFunction, redirect, useLoaderData } from "remix";
 import { getPageBySlug } from "~/api/contentful";
 import { ContentBlock, Image, Layout, RichText } from "~/components";
 import { TInfoPage } from "~/types/shared";
@@ -20,8 +20,11 @@ export const meta: MetaFunction = ({
   };
 };
 
-export function loader({ params }: { params: { pageId: string } }) {
-  const res = getPageBySlug(params.pageId);
+export async function loader({ params }: { params: { pageId: string } }) {
+  const res = await getPageBySlug(params.pageId);
+
+  if (!res) return redirect("/");
+
   return res;
 }
 

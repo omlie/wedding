@@ -10,6 +10,7 @@ const formIds: string[] = [
   "shuttle",
   "allergies",
   "songs",
+  "note",
 ];
 
 export const addRsvp = async (formData: FormData) => {

@@ -56,11 +56,13 @@ const RSVP = () => {
 
   const [guest, setGuest] = useState<TGuest | undefined>(undefined);
   const [attending, setAttending] = useState<boolean>(false);
+  const [attendingIsDirty, setAttendingIsDirty] = useState<boolean>(false);
 
   const onGuestChange = (guest?: TGuest) => setGuest(guest);
 
   const onAttendingChange = (value: string) => {
     setAttending(value === "Yes" ? true : false);
+    setAttendingIsDirty(true);
   };
 
   return (
@@ -160,6 +162,10 @@ const RSVP = () => {
                 />
 
                 <Input type="textarea" label={formLabels.songs} id="songs" />
+              </FadeInContainer>
+
+              <FadeInContainer hidden={!attendingIsDirty}>
+                <Input label={formLabels.note} id="note" type="textarea" />
               </FadeInContainer>
 
               <button

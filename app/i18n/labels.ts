@@ -24,6 +24,7 @@ type TLabels = {
       shuttle: string;
       allergies: string;
       songs: string;
+      note: string;
       submit: string;
     };
     hotelReadMore: string;
@@ -68,6 +69,7 @@ export const labels: TLocaleLabels = {
         shuttle: "Do you need shuttle to the wedding location?",
         allergies: "Any allergies/diets we need to know about?",
         songs: "Any songs you wanna dance to?",
+        note: "Send a note to the couple?",
         submit: "Submit your response",
       },
       hotelReadMore: "Read more about hotel stay",
@@ -112,6 +114,7 @@ export const labels: TLocaleLabels = {
         shuttle: "Trenger du skyss til bryllupslokasjonen?",
         allergies: "Har du noen allergier/dietter vi må vite om?",
         songs: "Hvilke sanger vil du danse til?",
+        note: "Melding til brudeparet?",
         submit: "Send inn ditt svar",
       },
       hotelReadMore: "Les mer om hotell",
