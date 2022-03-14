@@ -11,6 +11,8 @@ type TLabels = {
   nameError: string;
   yes: string;
   no: string;
+  rsvpYes: string;
+  rsvpNo: string;
   price: string;
   date: string;
   location: string;
@@ -54,8 +56,10 @@ export const labels: TLocaleLabels = {
     registerItem: "Register purchase of {item}",
     valueError: "Invalid value",
     nameError: "Please enter your name",
-    yes: "I would not miss it for the world",
-    no: "Will be there in spirit",
+    yes: "Yes",
+    no: "No",
+    rsvpYes: "I would not miss it for the world",
+    rsvpNo: "Will be there in spirit",
     price: "Price: {price}",
     date: "25th of June, 2022",
     location: "Haugesund, Norway",
@@ -99,8 +103,10 @@ export const labels: TLocaleLabels = {
     registerItem: "Registrer kjøp av {item}",
     valueError: "Ikke godkjent antall",
     nameError: "Vennligst skriv inn navnet ditt",
-    yes: "Er du gal, så klart!",
-    no: "Må gå glipp av hele kalaset",
+    yes: "Ja",
+    no: "Nei",
+    rsvpYes: "Er du gal, så klart!",
+    rsvpNo: "Må gå glipp av hele kalaset",
     price: "Pris: {price}",
     date: "25. juni 2022",
     location: "Haugesund",

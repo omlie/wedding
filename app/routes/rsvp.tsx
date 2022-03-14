@@ -103,6 +103,8 @@ const RSVP = () => {
                 id="attending"
                 onChange={onAttendingChange}
                 required
+                yesLabel={labels[locale].rsvpYes}
+                noLabel={labels[locale].rsvpNo}
               />
 
               <FadeInContainer hidden={!attending || !guest?.plusOne}>

@@ -9,11 +9,15 @@ const RadioButtons = ({
   id,
   onChange,
   required,
+  yesLabel,
+  noLabel,
 }: {
   label: ReactNode;
   id: string;
   onChange?: (value: string) => void;
   required: boolean;
+  yesLabel?: string;
+  noLabel?: string;
 }) => {
   const locale = useLocale();
   const [selected, setSelected] = useState<string | undefined>();
@@ -39,7 +43,7 @@ const RadioButtons = ({
           name={id}
           required={required}
         />
-        <label htmlFor={`yes-${id}`}>{labels[locale].yes}</label>
+        <label htmlFor={`yes-${id}`}>{yesLabel ?? labels[locale].yes}</label>
 
         <input
           id={`no-${id}`}
@@ -51,7 +55,7 @@ const RadioButtons = ({
           required={required}
         />
         <label htmlFor={`no-${id}`} onChange={handleChange}>
-          {labels[locale].no}
+          {noLabel ?? labels[locale].no}
         </label>
       </div>
     </div>
