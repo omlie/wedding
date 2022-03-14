@@ -1,6 +1,7 @@
 import { useLoaderData } from "remix";
 import { getMainPage } from "~/api/contentful";
 import { ContentBlock, Image, Layout, RichText } from "~/components";
+import Timeline from "~/components/Timeline";
 import { useLocale } from "~/hooks";
 import { labels } from "~/i18n";
 import { TPage } from "~/types/shared";
@@ -33,6 +34,7 @@ export default function Index() {
             {...block}
           />
         ))}
+        <Timeline />
       </Layout>
     </main>
   );

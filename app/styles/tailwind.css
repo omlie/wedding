@@ -86,4 +86,20 @@
   .custom-class {
     @apply bg-black;
   }
+
+  .right-after-dot {
+    @apply after:bg-text after:rounded-full after:p-1 after:absolute after:-bottom-[0.3rem] after:-right-1;
+  }
+
+  .left-after-dot {
+    @apply after:bg-text after:rounded-full after:p-1 after:absolute after:-bottom-[0.3rem] after:-left-1;
+  }
+
+  .before-dot {
+    @apply before:bg-text before:rounded-full before:p-1 before:absolute before:-top-1 before:-right-[0.3rem];
+  }
+
+  .after-dot {
+    @apply after:bg-text after:rounded-full after:p-1 after:absolute after:-bottom-1 after:-right-[0.3rem];
+  }
 }

@@ -41,6 +41,14 @@ type TLabels = {
     oneRsvpPerHousehold: string;
     hasResponded: string;
   };
+  timeline: {
+    ourWeddingDay: string;
+    ceremony: string;
+    funInbetweener: string;
+    dinner: string;
+    cakeTime: string;
+    dancing: string;
+  };
 };
 type TLocaleLabels = { "en-AU": TLabels; nb: TLabels };
 
@@ -91,6 +99,14 @@ export const labels: TLocaleLabels = {
       hasResponded:
         "You already responded to your invitation. It anything has changed since then, please contact Othea Vikse or Vana Prayitno.",
     },
+    timeline: {
+      ourWeddingDay: "Our wedding day",
+      ceremony: "Ceremony",
+      funInbetweener: "Fun in-betweener",
+      dinner: "Dinner",
+      cakeTime: "Cake time",
+      dancing: "Dancing",
+    },
   },
   nb: {
     wishlist: "Ønskeliste",
@@ -140,6 +156,14 @@ export const labels: TLocaleLabels = {
         "Vi trenger bare at en husholdning registrerer seg én gang. Fyll derfor inn navnet til de du tar med deg i bryllupet under her. Husk også å ta de i betraktningen når du fyller ut de andre feltene.",
       hasResponded:
         "Du har allerede svart på invitasjonen din. Hvis noe har endret seg siden da, ta kontakt med Othea Vikse eller Vana Prayitno.",
+    },
+    timeline: {
+      ourWeddingDay: "Bryllupsdagen",
+      ceremony: "Seremoni",
+      funInbetweener: "Gøyal mingling",
+      dinner: "Middag",
+      cakeTime: "Kake",
+      dancing: "Dansing",
     },
   },
 };
