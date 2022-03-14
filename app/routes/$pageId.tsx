@@ -36,9 +36,11 @@ export default function Index() {
       <Layout>
         <h1>{heading}</h1>
         <RichText content={body} />
-        {contentBlocks?.map((block) => (
-          <ContentBlock key={block.heading} {...block} />
-        ))}
+        <div className="flex flex-col gap-12">
+          {contentBlocks?.map((block) => (
+            <ContentBlock key={block.heading} {...block} />
+          ))}
+        </div>
       </Layout>
     </main>
   );
